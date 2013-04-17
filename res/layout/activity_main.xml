@@ -10,21 +10,27 @@
     >
     
 	    	<TableRow >
-	    	    <Button
+	    	    <ImageView
             	android:id="@+id/locationButton"
             	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="Loc"
-            	android:layout_weight="1" />
+            	
+            	android:src="@drawable/nav_location_240"
+            	android:layout_weight="1"
+            	android:scaleType="fitXY"
+            	 />
 	    	    
-	    	    <Button
+	    	    <ImageView
             	android:id="@+id/pictureButton"
             	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="Pic"
-            	android:layout_weight="1" />
+            	
+            	android:src="@drawable/nav_taste_240"
+            	android:layout_weight="1"
+            	android:scaleType="fitXY"
+            	 />
 	    	    
 	    	</TableRow>
+	    	
+	</TableLayout>
     
     <FrameLayout
         android:id="@+id/fragment_content"
