@@ -1,18 +1,24 @@
 package fr.grenoble.hci_restaurant_finder;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-public class MainActivity extends Activity {
+import com.google.android.gms.maps.SupportMapFragment;
+
+public class MainActivity extends FragmentActivity {
 	
 	ImageView locationButton;
 	ImageView picturesButton;
-	FrameLayout fragmentContent;
+	//FrameLayout fragmentContent;
+	Fragment locatorFragment;
+	Fragment resultsFragment;
+	Fragment restaurantsFragment;
 	
 	byte selected = 0;
 
@@ -23,7 +29,7 @@ public class MainActivity extends Activity {
 		
 		locationButton = (ImageView) findViewById(R.id.locationButton);
 		picturesButton = (ImageView) findViewById(R.id.pictureButton);
-		fragmentContent = (FrameLayout) findViewById(R.id.fragment_content);
+		//fragmentContent = (FrameLayout) findViewById(R.id.fragment_content);
 		
 		locationButton.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
@@ -38,6 +44,15 @@ public class MainActivity extends Activity {
 				refreshPictureButtons();
 			}
 		});
+		
+		locatorFragment = new LocatorFragment();
+		
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+		transaction.replace(R.id.fragment_content, locatorFragment);
+		transaction.addToBackStack(null);
+		
+		transaction.commit();
 	}
 	
 	public void refreshPictureButtons() {

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+<com.google.android.gms.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottombanner"
+>
+</com.google.android.gms.maps.MapView>
+
+
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/LayoutGPSOff"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_above="@+id/bottombanner"
+	    android:background="#FFFFFF"
+	    android:visibility="gone" >
+    
+    	<TextView
+            android:id="@+id/textViewGPS1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your GPS is off."
+            android:layout_gravity="center"
+            android:layout_centerInParent="true" />
+    	
+    	<Button
+        android:id="@+id/buttonTurnGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch on GPS"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textViewGPS1" />
+    	
+    	<TextView
+            android:id="@+id/textViewGPS2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="or manually enter Address"
+            android:layout_below="@+id/buttonTurnGPS"/>
+    </RelativeLayout>
+    
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/LayoutAddress"
+    android:background="#FFFFFF"
+    android:layout_above="@+id/bottombanner"
+	android:visibility="gone"
+	android:padding="10dp" >
+
+		<EditText
+		    android:id="@+id/editTextAddress"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:ems="10"
+		    android:hint="address..." >
+		    <requestFocus />
+		</EditText>
+	    
+	    <Button
+        android:id="@+id/buttonSearchAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address" />
+	    	
+	</LinearLayout>
+	
+	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/bottombanner"
+    android:layout_alignParentBottom="true" >
+    
+    <Button
+        android:id="@+id/buttonGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS" />
+
+    <Button
+        android:id="@+id/buttonAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp"
+    >
+
+        <TextView
+            android:id="@+id/textViewRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="300 m"
+            android:layout_gravity="center" />
+    
+    <SeekBar
+        android:id="@+id/seekBarRadius"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+         />
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    
+        <TableRow>
+            <TextView
+        	android:id="@+id/textView2"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="1"
+        	android:text="100 m"
+        	android:gravity="left" />
+            
+            <TextView
+        	android:id="@+id/textView3"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="1"
+        	android:text="Search radius"
+        	android:gravity="center" />
+            
+            <TextView
+        	android:id="@+id/textView4"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="1"
+        	android:text="10 km"
+        	android:gravity="right" />
+        </TableRow>
+    
+        </TableLayout>
+    
+    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
