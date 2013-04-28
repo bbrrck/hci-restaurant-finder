@@ -6,7 +6,7 @@ public class RestaurantSearcher {
 	
 	public RestaurantSearcher(ResultPicture picture) { this.picture = picture; }
 	
-	public search() {
+	public void search() {
 		
 	}
 
