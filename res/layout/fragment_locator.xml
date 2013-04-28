@@ -80,17 +80,20 @@
     android:id="@+id/bottombanner"
     android:layout_alignParentBottom="true" >
     
-    <Button
+    <ImageView
         android:id="@+id/buttonGPS"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GPS" />
+        android:layout_height="fill_parent"
+        android:src="@drawable/loc_gps_120"
+        android:scaleType="centerCrop"
+    />
 
-    <Button
+    <ImageView
         android:id="@+id/buttonAddress"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Address" />
+        android:layout_height="fill_parent"
+        android:src="@drawable/loc_address_120"
+        android:scaleType="centerCrop" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"

@@ -128,29 +128,37 @@
     android:id="@+id/bottombannerResults"
     android:layout_alignParentBottom="true" >
     
-    <Button
+    <ImageView
         android:id="@+id/buttonStar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Star Pictures" />
+        android:src="@drawable/taste_nav_star_120"
+        android:scaleType="centerCrop"
+        android:layout_weight="1" />
 
-    <Button
+    <ImageView
         android:id="@+id/buttonCategories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Categories" />
+        android:src="@drawable/taste_nav_categories_120"
+        android:scaleType="centerCrop"
+        android:layout_weight="1" />
     
-    <Button
+    <ImageView
         android:id="@+id/buttonKeywords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Keywords" />
+        android:src="@drawable/taste_nav_keywords_120"
+        android:scaleType="centerCrop"
+        android:layout_weight="1" />
     
-    <Button
+    <ImageView
         android:id="@+id/buttonRefresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Refresh" />
+        android:src="@drawable/taste_button_refresh_120"
+        android:scaleType="centerCrop"
+        android:layout_weight="1" />
 
     </LinearLayout>
 </RelativeLayout>
