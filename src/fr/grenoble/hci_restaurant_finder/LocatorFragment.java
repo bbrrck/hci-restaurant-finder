@@ -14,16 +14,15 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -37,8 +36,8 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 	TextView textViewRadius;
 	RelativeLayout layoutGPSOff;
 	Button buttonTurnGPS;
-	Button buttonGPS;
-	Button buttonAddress;
+	ImageView buttonGPS;
+	ImageView buttonAddress;
 	LinearLayout layoutAddress;
 	EditText editTextAddress;
 	Button buttonSearchAddress;
@@ -75,20 +74,28 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 		 	
 		 	layoutAddress = (LinearLayout) inflatedView.findViewById(R.id.LayoutAddress);
 		 	
-		 	buttonAddress = (Button) inflatedView.findViewById(R.id.buttonAddress);
+		 	buttonAddress = (ImageView) inflatedView.findViewById(R.id.buttonAddress);
+		 	
+		 	buttonGPS = (ImageView) inflatedView.findViewById(R.id.buttonGPS);
 		 	
 		 	buttonAddress.setOnClickListener(new OnClickListener(){
 				public void onClick(View v) {
+					buttonAddress.setImageDrawable(getResources().getDrawable(R.drawable.loc_address_selected_120));
+					buttonGPS.setImageDrawable(getResources().getDrawable(R.drawable.loc_gps_120));
+					if (layoutAddress.getVisibility()!=0)
+					{
 					layoutAddress.setVisibility(0);
 					locateByGPS = false;
 					removeUpdates();
+					}
+					else layoutAddress.setVisibility(8);
 				}
 			});
 		 	
-		 	buttonGPS = (Button) inflatedView.findViewById(R.id.buttonGPS);
-		 	
 		 	buttonGPS.setOnClickListener(new OnClickListener(){
 				public void onClick(View v) {
+					buttonAddress.setImageDrawable(getResources().getDrawable(R.drawable.loc_address_120));
+					buttonGPS.setImageDrawable(getResources().getDrawable(R.drawable.loc_gps_selected_120));
 					layoutAddress.setVisibility(8);
 					locateByGPS = true;
 					requestUpdates();
@@ -97,6 +104,7 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 		 	
 		 	locationManager = (LocationManager) getActivity().getSystemService( getActivity().LOCATION_SERVICE );
 
+		 	buttonGPS.setImageDrawable(getResources().getDrawable(R.drawable.loc_gps_selected_120));
 		 	
 	        return inflatedView;
 	    }
