@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottombannerResults"
+        android:numColumns="2" >
+    </GridView>
+    
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/LayoutKeywords"
+    android:background="#FFFFFF"
+    android:layout_above="@+id/bottombannerResults"
+	android:visibility="gone"
+	android:padding="10dp" >
+
+		<EditText
+		    android:id="@+id/editTextKeywords"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:ems="10"
+		    android:hint="salad, steak, pasta..." >
+		    <requestFocus />
+		</EditText>
+	    
+	    <Button
+        android:id="@+id/buttonClearKeywords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear" />
+	    	
+	</LinearLayout>
+	
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/LayoutCategories"
+    android:background="#FFFFFF"
+    android:layout_above="@+id/bottombannerResults"
+	android:visibility="gone"
+	>
+
+		<TableRow>
+
+			<ToggleButton
+			    android:id="@+id/toggleButtonSnacks"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textOn="Snacks"
+			    android:textOff="Snacks"
+			    android:layout_weight="1" />
+			
+			<ToggleButton
+			    android:id="@+id/toggleButtonBreakfast"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textOn="Breakfast"
+			    android:textOff="Breakfast"
+			    android:layout_weight="1" />
+			
+			<ToggleButton
+			    android:id="@+id/toggleButtonAppetizers"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textOn="Appetizers"
+			    android:textOff="Appetizers"
+			    android:layout_weight="1" />
+			
+			<ToggleButton
+			    android:id="@+id/toggleButtonDrinks"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textOn="Drinks"
+			    android:textOff="Drinks"
+			    android:layout_weight="1" />
+		    
+		</TableRow>
+		
+		<TableRow >
+		    <ToggleButton
+			    android:id="@+id/toggleButtonMaindishes"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textOn="Main dishes"
+			    android:textOff="Main dishes"
+			    android:layout_weight="1" />
+			
+			<ToggleButton
+			    android:id="@+id/toggleButtonFastfood"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textOn="Fast food"
+			    android:textOff="Fast food"
+			    android:layout_weight="1" />
+			
+			<ToggleButton
+			    android:id="@+id/toggleButtonHealthy"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textOn="Healthy"
+			    android:textOff="Healthy"
+			    android:layout_weight="1" />
+			
+			<ToggleButton
+			    android:id="@+id/toggleButtonDessert"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textOn="Dessert"
+			    android:textOff="Dessert"
+			    android:layout_weight="1" />
+		</TableRow>
+	    	
+	</TableLayout>
+	
+	
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/bottombannerResults"
+    android:layout_alignParentBottom="true" >
+    
+    <Button
+        android:id="@+id/buttonStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Star Pictures" />
+
+    <Button
+        android:id="@+id/buttonCategories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categories" />
+    
+    <Button
+        android:id="@+id/buttonKeywords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keywords" />
+    
+    <Button
+        android:id="@+id/buttonRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh" />
+
+    </LinearLayout>
+</RelativeLayout>
