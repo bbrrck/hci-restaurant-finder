@@ -6,7 +6,6 @@ package fr.grenoble.hci_restaurant_finder;
  *
  */
 public enum Category {
-	
 	SNACKS,	
 	BREAKFAST, 
 	APPETIZERS, 

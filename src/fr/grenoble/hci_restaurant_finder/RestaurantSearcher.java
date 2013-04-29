@@ -2,12 +2,20 @@ package fr.grenoble.hci_restaurant_finder;
 
 public class RestaurantSearcher {
 	
-	private ResultPicture picture;
+	private RestaurantFromPicture finder;
 	
-	public RestaurantSearcher(ResultPicture picture) { this.picture = picture; }
+	public RestaurantSearcher() {}
 	
-	public void search() {
-		
+	public RestaurantSearcher(ResultPicture picture) { 
+		finder = new RestaurantFromPictureCSV(picture.getPictureID());
+	}
+	
+	public void setPicture(ResultPicture picture) {
+		finder = new RestaurantFromPictureCSV(picture.getPictureID());
+	}
+	
+	public Restaurant search() {
+		return finder.getRestaurantFromPicture();
 	}
 
 }
