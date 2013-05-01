@@ -7,7 +7,7 @@
         android:id="@+id/gridView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottombannerResults"
+        android:layout_above="@+id/bottombannerlineResults"
         android:numColumns="2" >
     </GridView>
     
@@ -16,14 +16,14 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:id="@+id/LayoutKeywords"
-    android:background="#FFFFFF"
-    android:layout_above="@+id/bottombannerResults"
+    android:background="#DDDDDD"
+    android:layout_above="@+id/bottombannerlineResults"
 	android:visibility="gone"
 	android:padding="10dp" >
 
 		<EditText
 		    android:id="@+id/editTextKeywords"
-		    android:layout_width="wrap_content"
+		    android:layout_width="0dip"
 		    android:layout_height="wrap_content"
 		    android:layout_weight="1"
 		    android:ems="10"
@@ -35,6 +35,9 @@
         android:id="@+id/buttonClearKeywords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#CC0000"
+        android:textColor="#FFFFFF"
+        android:padding="13dp"
         android:text="Clear" />
 	    	
 	</LinearLayout>
@@ -44,7 +47,7 @@
     android:layout_height="wrap_content"
     android:id="@+id/LayoutCategories"
     android:background="#FFFFFF"
-    android:layout_above="@+id/bottombannerResults"
+    android:layout_above="@+id/bottombannerlineResults"
 	android:visibility="gone"
 	>
 
@@ -54,32 +57,36 @@
 			    android:id="@+id/toggleButtonSnacks"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:textOn="Snacks"
-			    android:textOff="Snacks"
+			    android:textOn=""
+			    android:textOff=""
+			    android:background="@drawable/checksnacks"
 			    android:layout_weight="1" />
 			
 			<ToggleButton
 			    android:id="@+id/toggleButtonBreakfast"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:textOn="Breakfast"
-			    android:textOff="Breakfast"
+			    android:textOn=""
+			    android:textOff=""
+			    android:background="@drawable/checkbreakfast"
 			    android:layout_weight="1" />
 			
 			<ToggleButton
 			    android:id="@+id/toggleButtonAppetizers"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:textOn="Appetizers"
-			    android:textOff="Appetizers"
+			    android:textOn=""
+			    android:textOff=""
+			    android:background="@drawable/checkappetizers"
 			    android:layout_weight="1" />
 			
 			<ToggleButton
 			    android:id="@+id/toggleButtonDrinks"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:textOn="Drinks"
-			    android:textOff="Drinks"
+			    android:textOn=""
+			    android:textOff=""
+			    android:background="@drawable/checkdrinks"
 			    android:layout_weight="1" />
 		    
 		</TableRow>
@@ -89,37 +96,48 @@
 			    android:id="@+id/toggleButtonMaindishes"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:textOn="Main dishes"
-			    android:textOff="Main dishes"
+			    android:textOn=""
+			    android:textOff=""
+			    android:background="@drawable/checkmain"
 			    android:layout_weight="1" />
 			
 			<ToggleButton
 			    android:id="@+id/toggleButtonFastfood"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:textOn="Fast food"
-			    android:textOff="Fast food"
+			    android:textOn=""
+			    android:textOff=""
+			    android:background="@drawable/checkfast"
 			    android:layout_weight="1" />
 			
 			<ToggleButton
 			    android:id="@+id/toggleButtonHealthy"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:textOn="Healthy"
-			    android:textOff="Healthy"
+			    android:textOn=""
+			    android:textOff=""
+			    android:background="@drawable/checkhealthy"
 			    android:layout_weight="1" />
 			
 			<ToggleButton
 			    android:id="@+id/toggleButtonDessert"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:textOn="Dessert"
-			    android:textOff="Dessert"
+			    android:textOn=""
+			    android:textOff=""
+			    android:background="@drawable/checkdessert"
 			    android:layout_weight="1" />
 		</TableRow>
 	    	
 	</TableLayout>
 	
+    <View
+        	android:id="@+id/bottombannerlineResults"
+        	android:layout_width="fill_parent"
+        	android:layout_height="1dp"
+        	android:background="#666666"
+        	android:layout_above="@+id/bottombannerResults"
+        	/>
 	
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"

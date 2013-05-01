@@ -7,7 +7,7 @@
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottombanner"
+        android:layout_above="@+id/bottombannerline"
 >
 </com.google.android.gms.maps.MapView>
 
@@ -16,14 +16,16 @@
 	    android:id="@+id/LayoutGPSOff"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
-	    android:layout_above="@+id/bottombanner"
-	    android:background="#FFFFFF"
+	    android:layout_above="@+id/bottombannerline"
+	    android:background="#F1F1F1"
 	    android:visibility="gone" >
     
     	<TextView
             android:id="@+id/textViewGPS1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#666666"
+            android:textSize="19dp"
             android:text="Your GPS is off."
             android:layout_gravity="center"
             android:layout_centerInParent="true" />
@@ -33,6 +35,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Switch on GPS"
+        android:textSize="20dp"
+        android:background="#339933"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textViewGPS1" />
     	
@@ -41,6 +47,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:textColor="#666666"
+            android:textSize="19dp"
             android:text="or manually enter Address"
             android:layout_below="@+id/buttonTurnGPS"/>
     </RelativeLayout>
@@ -50,14 +58,14 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:id="@+id/LayoutAddress"
-    android:background="#FFFFFF"
-    android:layout_above="@+id/bottombanner"
+    android:background="#DDDDDD"
+    android:layout_above="@+id/bottombannerline"
 	android:visibility="gone"
 	android:padding="10dp" >
 
 		<EditText
 		    android:id="@+id/editTextAddress"
-		    android:layout_width="wrap_content"
+		    android:layout_width="0dip"
 		    android:layout_height="wrap_content"
 		    android:layout_weight="1"
 		    android:ems="10"
@@ -69,10 +77,20 @@
         android:id="@+id/buttonSearchAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Address" />
+        android:background="#CC0000"
+        android:textColor="#FFFFFF"
+        android:padding="13dp"
+        android:text="Locate" />
 	    	
 	</LinearLayout>
 	
+	 <View
+        	android:id="@+id/bottombannerline"
+        	android:layout_width="fill_parent"
+        	android:layout_height="1dp"
+        	android:background="#666666"
+        	android:layout_above="@+id/bottombanner"
+        	/>
 	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -100,6 +118,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="6dp"
+    android:background="#DDDDDD"
     >
 
         <TextView
@@ -107,7 +126,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="#CC0000"
             android:text="300 m"
+            android:textSize="18dp"
             android:layout_gravity="center" />
     
     <SeekBar
@@ -129,6 +150,8 @@
         	android:layout_height="wrap_content"
         	android:layout_weight="1"
         	android:text="100 m"
+        	android:textColor="#666666"
+        	android:textSize="11dp"
         	android:gravity="left" />
             
             <TextView
@@ -136,6 +159,8 @@
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
         	android:layout_weight="1"
+        	android:textColor="#CC0000"
+        	android:textSize="11dp"
         	android:text="Search radius"
         	android:gravity="center" />
             
@@ -145,6 +170,8 @@
         	android:layout_height="wrap_content"
         	android:layout_weight="1"
         	android:text="10 km"
+        	android:textColor="#666666"
+        	android:textSize="11dp"
         	android:gravity="right" />
         </TableRow>
     
