@@ -2,6 +2,7 @@ package fr.grenoble.hci_restaurant_finder;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.location.Address;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -21,17 +22,27 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class LocatorFragment extends Fragment implements OnSeekBarChangeListener, LocationListener{
+import fr.grenoble.hci_restaurant_finder.AddressSearcher.AddressSearchCompleteListener;
+
+public class LocatorFragment extends Fragment implements OnSeekBarChangeListener, LocationListener, AddressSearchCompleteListener{
 	
 	MapView mapView;
 	GoogleMap map;
 	Circle circle;
+	Marker ownself;
+	LatLng position;
 	SeekBar seekbarRadius;
 	TextView textViewRadius;
 	RelativeLayout layoutGPSOff;
@@ -39,8 +50,10 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 	ImageView buttonGPS;
 	ImageView buttonAddress;
 	LinearLayout layoutAddress;
+	Button buttonLocate;
 	EditText editTextAddress;
 	Button buttonSearchAddress;
+	AddressSearcher searcher;
 	private LocationManager locationManager; 
 	int radius = 300;
 	boolean locateByGPS = true;
@@ -54,6 +67,12 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 		 	
 		 	mapView = (MapView) inflatedView.findViewById(R.id.map);
 		 	mapView.onCreate(null);
+		 	
+		 	 try {
+		 	     MapsInitializer.initialize(getActivity());
+		 	 } catch (GooglePlayServicesNotAvailableException e) {
+		 	     e.printStackTrace();
+		 	 }
 		 	
 		 	seekbarRadius = (SeekBar) inflatedView.findViewById(R.id.seekBarRadius);
 		 	seekbarRadius.setProgress(3);
@@ -102,9 +121,21 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 				}
 			});
 		 	
+		 	buttonLocate = (Button) inflatedView.findViewById(R.id.buttonSearchAddress);
+		 	
+		 	buttonLocate.setOnClickListener(new OnClickListener(){
+				public void onClick(View v) {
+					searchForAddress();
+				}
+			});
+		 	
+		 	editTextAddress = (EditText) inflatedView.findViewById(R.id.editTextAddress);
+		 	
 		 	locationManager = (LocationManager) getActivity().getSystemService( getActivity().LOCATION_SERVICE );
 
 		 	buttonGPS.setImageDrawable(getResources().getDrawable(R.drawable.loc_gps_selected_120));
+		 	
+		 	position = new LatLng(0, 0);
 		 	
 	        return inflatedView;
 	    }
@@ -163,17 +194,27 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 	@Override
 	public void onLocationChanged(Location location) {
 		
-		/*CameraPosition cp = new CameraPosition.Builder()
-        .target(new LatLng(location.getLatitude(),location.getLongitude()))
+		changeLocationOnMap(new LatLng(location.getLatitude(), location.getLongitude()));
+		
+	}
+	
+	private void changeLocationOnMap(LatLng coordinates) {
+		
+		position = coordinates;
+		
+		CameraPosition cp = new CameraPosition.Builder()
         .zoom(12)
+        .target(position)
         .build();
 		
-        map.animateCamera(CameraUpdateFactory.newCameraPosition(cp));*/
+        map.animateCamera(CameraUpdateFactory.newCameraPosition(cp));
+		
+		if (ownself!=null) ownself.setPosition(position);
         
-        if (circle!=null) circle.setCenter(new LatLng(location.getLatitude(),location.getLongitude()));
+        if (circle!=null) circle.setCenter(coordinates);
         else {
         	circle = map.addCircle(new CircleOptions()
-		     .center(new LatLng(location.getLatitude(), location.getLongitude()))
+		     .center(coordinates)
 		     .radius(radius)
 		     .strokeColor(Color.RED)
 		     .fillColor(0x55FF0000));
@@ -211,13 +252,35 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 		 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 12000, 0,this); 
 				locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 6000, 0,this);
 				
-				map.setMyLocationEnabled(true);
+				//map.setMyLocationEnabled(true);
+				ownself = map.addMarker(new MarkerOptions()
+	             .position(position));
 		 	}
 	}
 	
 	public void removeUpdates() {
 		if (locationManager != null) locationManager.removeUpdates(this);
-		map.setMyLocationEnabled(false);
+		//map.setMyLocationEnabled(false);
+	}
+
+	private void searchForAddress() {
+		searcher = new AddressSearcher(getActivity(),this);
+		String str = editTextAddress.getText().toString();
+		searcher.execute(str);
+	}
+
+	@Override
+	public void onTaskComplete(Address add) {
+
+		changeLocationOnMap(new LatLng(add.getLatitude(),add.getLongitude()));
+		
+	}
+
+
+	@Override
+	public void onError(String aError) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
