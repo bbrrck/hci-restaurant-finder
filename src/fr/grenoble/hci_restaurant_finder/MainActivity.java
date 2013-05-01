@@ -1,5 +1,6 @@
 package fr.grenoble.hci_restaurant_finder;
 
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -9,8 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-import com.google.android.gms.maps.SupportMapFragment;
-
 public class MainActivity extends FragmentActivity {
 	
 	ImageView locationButton;
@@ -19,6 +18,7 @@ public class MainActivity extends FragmentActivity {
 	Fragment locatorFragment;
 	Fragment resultsFragment;
 	Fragment restaurantsFragment;
+	AssetManager assetManager;
 	
 	byte selected = 0;
 
@@ -26,6 +26,8 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		assetManager = getAssets();
 		
 		locationButton = (ImageView) findViewById(R.id.locationButton);
 		picturesButton = (ImageView) findViewById(R.id.pictureButton);
