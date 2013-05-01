@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#F1F1F1" >
 
     <GridView
         android:id="@+id/gridView1"
@@ -35,7 +36,7 @@
         android:id="@+id/buttonClearKeywords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#CC0000"
+        android:background="@drawable/redbutton"
         android:textColor="#FFFFFF"
         android:padding="13dp"
         android:text="Clear" />

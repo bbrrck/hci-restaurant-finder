@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F1F1F1" >
+
+    <ImageView
+        android:id="@+id/imageViewRestaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    />
+
+    <TextView
+        android:id="@+id/textViewRestaurantName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:gravity="center"
+        android:textColor="#CC0000"
+        android:padding="6dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textViewRestaurantAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#666666"
+        android:padding="4dp"
+        android:text="address" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="4dp" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today: "
+            android:textColor="#666666" />
+
+        <TextView
+            android:id="@+id/textViewOpening"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hours"
+            android:textColor="#CC0000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="4dp"
+         >
+        
+        <ImageView
+        android:id="@+id/imageViewStar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/resto_rating_star_empty"
+        android:padding="2dp"
+    	/>
+        
+        <ImageView
+        android:id="@+id/imageViewStar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/resto_rating_star_empty"
+        android:padding="2dp"
+    	/>
+        
+        <ImageView
+        android:id="@+id/imageViewStar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/resto_rating_star_empty"
+        android:padding="2dp"
+    	/>
+        
+        <ImageView
+        android:id="@+id/imageViewStar4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/resto_rating_star_empty"
+        android:padding="2dp"
+    	/>
+        
+        <ImageView
+        android:id="@+id/imageViewStar5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/resto_rating_star_empty"
+        android:padding="2dp"
+    	/>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:id="@+id/restaurantPictureHolder" >
+    </LinearLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/restaurantmap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottombuttons"
+	>
+	</com.google.android.gms.maps.MapView>
+	
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottombuttons"
+        android:layout_alignParentBottom="true" >
+        
+        <TableRow>
+        <Button
+        android:id="@+id/buttonCall"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:text="Call"
+        android:background="@drawable/greenbutton"
+        android:padding="13dp"
+        android:textColor="#FFFFFF"
+        android:layout_weight="1" />
+        
+        <Button
+        android:id="@+id/buttonVisit"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:text="Visit website"
+        android:background="@drawable/redbutton"
+        android:padding="13dp"
+        android:textColor="#FFFFFF"
+        android:layout_weight="1" />
+        </TableRow>
+    </TableLayout>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:text="Switch on GPS"
         android:textSize="20dp"
-        android:background="#339933"
+        android:background="@drawable/greenbutton"
         android:textColor="#FFFFFF"
         android:padding="16dp"
         android:layout_centerHorizontal="true"
@@ -77,7 +77,7 @@
         android:id="@+id/buttonSearchAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#CC0000"
+        android:background="@drawable/redbutton"
         android:textColor="#FFFFFF"
         android:padding="13dp"
         android:text="Locate" />
@@ -133,8 +133,13 @@
     
     <SeekBar
         android:id="@+id/seekBarRadius"
-        android:layout_width="match_parent"
+        android:layout_width="180px"
         android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:maxHeight="3px"
+        android:minHeight="3px"
+        android:layout_gravity="center"
+        android:thumb="@drawable/loc_radius_seek_button"
         android:layout_weight="1"
          />
 
