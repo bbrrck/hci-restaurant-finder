@@ -1,18 +1,28 @@
 package fr.grenoble.hci_restaurant_finder;
 
+import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class ResultsFragment extends Fragment{
 
+	private GridView pictureGrid;
+	private ImageAdapter pictureAdapter;
 	private TableLayout layoutCategories;
 	private ImageView buttonStar;
 	private ImageView buttonCategories;
@@ -20,6 +30,10 @@ public class ResultsFragment extends Fragment{
 	private ImageView buttonKeywords;
 	private ImageView buttonRefresh;
 	private byte selected;
+	private Button buttonClearKeywords;
+	private EditText keywords;
+	private ArrayList<ToggleButton> categoryButtons;
+	private PictureSearcher pictureSearcher;
 
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,11 +44,27 @@ public class ResultsFragment extends Fragment{
 	 	layoutCategories = (TableLayout) inflatedView.findViewById(R.id.LayoutCategories);
 	 	layoutKeywords = (LinearLayout) inflatedView.findViewById(R.id.LayoutKeywords);
 	 	
+	 	pictureGrid = (GridView) inflatedView.findViewById(R.id.gridView1);
+	 	
+	 	pictureAdapter = new ImageAdapter(getActivity());
+	 	
+	 	pictureGrid.setAdapter(pictureAdapter);
+
+	 	pictureGrid.setOnItemClickListener(new OnItemClickListener() {
+	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+	            ResultPicture pic = (ResultPicture) pictureAdapter.getItem(position);
+	            ((MainActivity) getActivity()).moveToRestaurantPage(pic);
+	        }
+	    });
+	 	
 	 	buttonStar = (ImageView) inflatedView.findViewById(R.id.buttonStar);
 	 	
 	 	buttonStar.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
-				if (selected!=1) selected=1;
+				if (selected!=1) {
+					selected=1;
+					
+				}
 				else selected = 0;
 				refreshPictureButtons();
 			}
@@ -82,10 +112,48 @@ public class ResultsFragment extends Fragment{
 	 	
 	 	buttonRefresh.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
-				
+				pictureAdapter.addItem(new ResultPicture(false,null,null,0,0)); //dummy code
+				pictureAdapter.notifyDataSetChanged();
 			}
 		});
-
+	 	
+	 	keywords = (EditText) inflatedView.findViewById(R.id.editTextKeywords);
+	 	
+	 	buttonClearKeywords = (Button) inflatedView.findViewById(R.id.buttonClearKeywords);
+	 	
+	 	buttonClearKeywords.setOnClickListener(new OnClickListener(){
+			public void onClick(View v) {
+				pictureSearcher.clearKeywords();
+				keywords.setText("");
+			}
+		});
+	 	
+	 	categoryButtons = new ArrayList<ToggleButton>();
+	 	
+	 	categoryButtons.add((ToggleButton) inflatedView.findViewById(R.id.toggleButtonSnacks));
+	 	categoryButtons.add((ToggleButton) inflatedView.findViewById(R.id.toggleButtonBreakfast));
+	 	categoryButtons.add((ToggleButton) inflatedView.findViewById(R.id.toggleButtonAppetizers));
+	 	categoryButtons.add((ToggleButton) inflatedView.findViewById(R.id.toggleButtonDrinks));
+	 	categoryButtons.add((ToggleButton) inflatedView.findViewById(R.id.toggleButtonMaindishes));
+	 	categoryButtons.add((ToggleButton) inflatedView.findViewById(R.id.toggleButtonFastfood));
+	 	categoryButtons.add((ToggleButton) inflatedView.findViewById(R.id.toggleButtonHealthy));
+	 	categoryButtons.add((ToggleButton) inflatedView.findViewById(R.id.toggleButtonDessert));
+	 	
+	 	for (int i=0; i<8; i++) {
+	 		Category c;
+	 		switch (i) {
+	 		case 0: c = Category.SNACKS; break;
+	 		case 1: c = Category.BREAKFAST; break;
+	 		case 2: c = Category.APPETIZERS; break;
+	 		case 3: c = Category.DRINKS; break;
+	 		case 4: c = Category.MAIN_DISHES; break;
+	 		case 5: c = Category.FAST_FOOD; break;
+	 		case 6: c = Category.HEALTHY; break;
+	 		case 7: c = Category.DESSERT; break;
+	 		default: c = Category.SNACKS; break;
+	 		}
+	 		categoryButtons.get(i).setOnClickListener(new CategoryClickListener(c,pictureSearcher));
+	 	}
 	 	
         return inflatedView;
     }
@@ -110,6 +178,10 @@ public class ResultsFragment extends Fragment{
 				break;
 		default: break;
 		}
+	}
+	
+	public void addPictureSearcher(PictureSearcher s) {
+		pictureSearcher = s;
 	}
 	
 }

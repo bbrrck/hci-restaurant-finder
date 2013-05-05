@@ -282,5 +282,13 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public LatLng getPosition() {
+		return position;
+	}
+	
+	public int getRadius() {
+		return radius;
+	}
 
 }

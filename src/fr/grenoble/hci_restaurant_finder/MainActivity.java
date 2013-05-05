@@ -10,15 +10,19 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class MainActivity extends FragmentActivity {
 	
 	ImageView locationButton;
 	ImageView picturesButton;
 	//FrameLayout fragmentContent;
-	Fragment locatorFragment;
-	Fragment resultsFragment;
+	LocatorFragment locatorFragment;
+	ResultsFragment resultsFragment;
 	Fragment restaurantsFragment;
 	AssetManager assetManager;
+	PictureSearcher pictureSearcher;
+	RestaurantSearcher restaurantSearcher;
 	
 	byte selected = 0;
 
@@ -28,6 +32,7 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 		
 		assetManager = getAssets();
+		restaurantSearcher = new RestaurantSearcher();
 		
 		locationButton = (ImageView) findViewById(R.id.locationButton);
 		picturesButton = (ImageView) findViewById(R.id.pictureButton);
@@ -38,6 +43,7 @@ public class MainActivity extends FragmentActivity {
 		
 		locationButton.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
+				if (selected!=1) {
 				selected = 1;
 				refreshPictureButtons();
 				
@@ -45,18 +51,22 @@ public class MainActivity extends FragmentActivity {
 				transaction.replace(R.id.fragment_content, locatorFragment);
 				//transaction.addToBackStack(null);				
 				transaction.commit();
+				}
 			}
 		});
 		
 		picturesButton.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
+				if (selected!=2) {
 				selected = 2;
 				refreshPictureButtons();
-				
+				createPictureSearcher();
+				resultsFragment.addPictureSearcher(pictureSearcher);
 				FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 				transaction.replace(R.id.fragment_content, resultsFragment);
 				//transaction.addToBackStack(null);				
 				transaction.commit();
+				}
 			}
 		});
 		
@@ -90,6 +100,33 @@ public class MainActivity extends FragmentActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
+	}
+	
+	private void createPictureSearcher() {
+		LatLng position = locatorFragment.getPosition();
+		pictureSearcher = new PictureSearcher(position.latitude,position.longitude,locatorFragment.getRadius());
+	}
+	
+	protected PictureSearcher getPictureSearcher() {
+		return pictureSearcher;
+	}
+	
+	protected RestaurantSearcher getRestaurantSearcher() {
+		return restaurantSearcher;
+	}
+
+	public void moveToRestaurantPage(ResultPicture pic) {
+		restaurantSearcher.setPicture(pic);
+		Restaurant r = restaurantSearcher.search();
+		RestaurantFragment restFrag = new RestaurantFragment(r);
+		
+		selected = 0;
+		refreshPictureButtons();
+		
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		transaction.replace(R.id.fragment_content, restFrag);
+		//transaction.addToBackStack(null);				
+		transaction.commit();
 	}
 
 }
