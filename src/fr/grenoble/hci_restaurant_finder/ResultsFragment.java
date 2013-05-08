@@ -63,9 +63,14 @@ public class ResultsFragment extends Fragment{
 			public void onClick(View v) {
 				if (selected!=1) {
 					selected=1;
-					
+					pictureAdapter.starmode(true);
+					pictureAdapter.notifyDataSetChanged();
 				}
-				else selected = 0;
+				else {
+					selected = 0;
+					pictureAdapter.starmode(false);
+					pictureAdapter.notifyDataSetChanged();
+				}
 				refreshPictureButtons();
 			}
 		});

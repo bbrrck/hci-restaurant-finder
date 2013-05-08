@@ -1,5 +1,6 @@
 package fr.grenoble.hci_restaurant_finder;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.location.Address;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -107,12 +109,18 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 					locateByGPS = false;
 					removeUpdates();
 					}
-					else layoutAddress.setVisibility(8);
+					else {
+						layoutAddress.setVisibility(8);
+						InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+						imm.hideSoftInputFromWindow(editTextAddress.getWindowToken(), 0);
+					}
 				}
 			});
 		 	
 		 	buttonGPS.setOnClickListener(new OnClickListener(){
 				public void onClick(View v) {
+					InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+					imm.hideSoftInputFromWindow(editTextAddress.getWindowToken(), 0);
 					buttonAddress.setImageDrawable(getResources().getDrawable(R.drawable.loc_address_120));
 					buttonGPS.setImageDrawable(getResources().getDrawable(R.drawable.loc_gps_selected_120));
 					layoutAddress.setVisibility(8);
@@ -125,6 +133,8 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 		 	
 		 	buttonLocate.setOnClickListener(new OnClickListener(){
 				public void onClick(View v) {
+					InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+					imm.hideSoftInputFromWindow(editTextAddress.getWindowToken(), 0);
 					searchForAddress();
 				}
 			});

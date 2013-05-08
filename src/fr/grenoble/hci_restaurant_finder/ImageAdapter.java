@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -14,6 +15,7 @@ public class ImageAdapter extends BaseAdapter {
 	
     private Context mContext;
     private ArrayList<ResultPicture> pictures;
+    private boolean starmode = false;
 
     public ImageAdapter(Context c) {
         mContext = c;
@@ -43,21 +45,23 @@ public class ImageAdapter extends BaseAdapter {
     public void clearItems() {
     	pictures.clear();
     }
+    
+    public void starmode (boolean b) {
+    	starmode = b;
+    }
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
+        View grid;
         if (convertView == null) {  // if it's not recycled, initialize some attributes
-            imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(20, 20, 20, 20);
-            imageView.setBackgroundColor(Color.BLUE);
+        	grid = new View(mContext);
+            LayoutInflater inflater= (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            grid=inflater.inflate(R.layout.resultimage, parent, false);
         } else {
-            imageView = (ImageView) convertView;
+            grid = convertView;
         }
 
         //imageView.setImageResource(mThumbIds[position]);
-        return imageView;
+        return grid;
     }
 }
