@@ -3,39 +3,44 @@ package fr.grenoble.hci_restaurant_finder;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import android.content.res.AssetManager;
+
 public class PictureSearcher {
 	
 	private double latitude;
 	private double longitude;
 	private double radius;
-	private HashSet<Integer> starred;
+	private HashSet<ResultPicture> starred;
 	private HashSet<Category> categories;
 	private String keywords;
 
 	private ArrayList<String> keywordsDecomposed;
 	
-	private PictureFromID picFromID;
+	private ArrayList<ResultPicture> pictures;
 	
-	public PictureSearcher(double latitude, double longitude, double radius) {
+	public PictureSearcher(double latitude, double longitude, double radius, 
+			AssetManager assets) {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.radius = radius;
 		
-		starred = new HashSet<Integer>();
+		starred = new HashSet<ResultPicture>();
 		categories = new HashSet<Category>();
 		keywords = "";
 		
-		picFromID = new PictureFromIDCSV();
+		PictureCreatorCSV pictureCreator = new PictureCreatorCSV(latitude, 
+				longitude, radius, assets);
+		pictures = pictureCreator.getPictures();
 	}
 	
 	public void starPicture(ResultPicture pic) {
 		pic.star();
-		starred.add(pic.getPictureID());		
+		starred.add(pic);		
 	}
 	
 	public void unStarPicture(ResultPicture pic) {
 		pic.unStar();
-		starred.remove(pic.getPictureID());
+		starred.remove(pic);
 	}
 	
 	public void addCategoryFilter(Category cat) { categories.add(cat); }
@@ -43,14 +48,9 @@ public class PictureSearcher {
 	
 	public void addKeywords(String words) {
 		if (words != null && words.matches("\\w+")) {	
-			
-			keywords = words.replaceAll("\\s+", " ").trim();
-						
+			keywords = words.replaceAll("\\s+", " ").trim();			
 			keywordsDecomposed = new ArrayList<String>();
-			String[] split = words.split("\\s+");
-			
-			//TODO split up the keywords into ngrams for keywordsDecomposed
-				
+			fillNGrams(keywordsDecomposed, keywords);				
 		}
 		
 	}
@@ -66,12 +66,35 @@ public class PictureSearcher {
 		this.radius = radius;
 	}
 	
+	private void fillNGrams(ArrayList<String> decompList, String wordString) {
+		if (wordString != null && decompList != null) {
+			String[] words = wordString.split("\\s+");
+			for (int i = 0; i < words.length; i++) {
+				int n = words.length - i;
+				for (int j = 0; j < words.length - n + 1; j++) {
+					StringBuilder ngram = new StringBuilder();
+					for (int k = j; k < j + n; k++) {
+						ngram.append(words[k]);
+						if (k < j + n - 1) {
+							ngram.append(" ");
+						}
+					}
+					decompList.add(ngram.toString());
+				}
+			}
+		}
+	}
+	
 	public ArrayList<ResultPicture> search() {
 		
 		ArrayList<ResultPicture> results = new ArrayList<ResultPicture>();
 		
-		for (int i : starred) {
-			results.add(picFromID.getPictureFromID(i));
+		for (ResultPicture p : starred) {
+			results.add(p);
+		}
+		
+		if (keywordsDecomposed != null) {
+			
 		}
 		
 		return results;

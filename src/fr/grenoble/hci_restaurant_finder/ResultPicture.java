@@ -11,26 +11,26 @@ public class ResultPicture {
 	private boolean starred = false;
 	private HashSet<String> Tags = null;
 	private HashSet<Category> Categories = null;
-	private int pictureID;
 	private int restaurantID;
+	private String picFile;
 	
 	public ResultPicture(boolean starred, HashSet<String> Tags, 
-			HashSet<Category> Categories, int pictureID, int restaurantID) {
-		
+			HashSet<Category> Categories, int restaurantID,	String picFile) {
 		this.starred = starred;
 		this.Tags = Tags;
 		this.Categories = Categories;
-		this.pictureID = pictureID;
 		this.restaurantID = restaurantID;
+		this.picFile = picFile;
 	}
 	
 	public ResultPicture(boolean starred, Iterable<String> tags, 
-			Iterable<Category> categories, int pictureID, int restaurantID) {
+			Iterable<Category> categories, int pictureID, int restaurantID,
+			String picFile) {
 		this.starred = starred;
-		this.pictureID = pictureID;
 		this. restaurantID = restaurantID;
 		this.Tags = new HashSet<String>();
 		this.Categories = new HashSet<Category>();
+		this.picFile = picFile;
 		
 		for (String tag : tags) {
 			Tags.add(tag);
@@ -74,10 +74,10 @@ public class ResultPicture {
 		}
 	}
 	
-	public int getPictureID() { return pictureID; }
-	public void setPictureid(int ID) { pictureID = ID; }
-	
 	public int getRestaurantID() { return restaurantID; }
 	public void setRestaurantID(int ID) { restaurantID = ID; }
+	
+	public String getPicFile() { return picFile; }
+	public void setPicFile(String filename) { picFile = filename; }
 	
 }

@@ -13,22 +13,22 @@ public class Restaurant {
 	private String name;
 	private Address address;
 	
-	private int[] hours;
+	private String[] hours;
 	
 	/**
-	 * image resource for the map and restaurant picture
+	 * image filenames for the map and restaurant picture
 	 */
-	private int map;
-	private int picture;
-	private int[] foodPictures;
+	private String map;
+	private String picture;
+	private String[] foodPictures;
 	
 	private double rating;
 	
 	private String URL;
 	
 	public Restaurant(int id, String name, String phone, String address, 
-			double latitude, double longitude, int[] hours,
-			int map, int picture, List<Integer> foodPictures, 
+			double latitude, double longitude, String[] hours,
+			String map, String picture, List<String> foodPictures, 
 			double rating, String URL) {
 		
 		this.id = id;
@@ -42,7 +42,7 @@ public class Restaurant {
 		this.picture = picture;
 		this.rating = rating;
 		this.URL = URL;
-		this.foodPictures = new int[foodPictures.size()];
+		this.foodPictures = new String[foodPictures.size()];
 		for (int i = 0; i < this.foodPictures.length; i++)
 			this.foodPictures[i] = foodPictures.get(i);		
 	}
@@ -59,14 +59,14 @@ public class Restaurant {
 	public Address getAddress() { return address; }
 	public void setAddress(Address address) { this.address = address; }
 	
-	public int[] getHours() { return hours; }
-	public void setHours(int[] hours) { this.hours = hours; }
+	public String[] getHours() { return hours; }
+	public void setHours(String[] hours) { this.hours = hours; }
 	
-	public int getMapId() { return map; }
-	public void setMapId(int id) { this.map = id; }
+	public String getMapFilename() { return map; }
+	public void setMapFilename(String filename) { this.map = filename; }
 	
-	public int getPictureId() { return picture; }
-	public void setPictureId(int id) { this.picture = id; }
+	public String getPictureFilename() { return picture; }
+	public void setPictureId(String filename) { this.picture = filename; }
 	
 	public double getRating() { return rating; }
 	public void setRating(double rating) { this.rating = rating; }
