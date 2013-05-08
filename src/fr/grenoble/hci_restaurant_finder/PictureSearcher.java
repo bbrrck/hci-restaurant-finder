@@ -28,7 +28,8 @@ public class PictureSearcher {
 		categories = new HashSet<Category>();
 		keywords = "";
 		
-		PictureCreatorCSV pictureCreator = new PictureCreatorCSV(assets);
+		PictureCreatorCSV pictureCreator = new PictureCreatorCSV(latitude, 
+				longitude, radius, assets);
 		pictures = pictureCreator.getPictures();
 	}
 	
