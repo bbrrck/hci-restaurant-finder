@@ -133,11 +133,13 @@
     
     <SeekBar
         android:id="@+id/seekBarRadius"
-        android:layout_width="180px"
+        android:layout_width="200px"
         android:layout_height="wrap_content"
         android:progressDrawable="@drawable/seekbar_progress"
         android:maxHeight="3px"
         android:minHeight="3px"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_gravity="center"
         android:thumb="@drawable/loc_radius_seek_button"
         android:layout_weight="1"
