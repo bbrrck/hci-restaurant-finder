@@ -117,7 +117,7 @@ public class ResultsFragment extends Fragment{
 	 	
 	 	buttonRefresh.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
-				pictureAdapter.addItem(new ResultPicture(false,null,null,0,0)); //dummy code
+				pictureAdapter.addItem(new ResultPicture(false,null,null,0,"0")); //dummy code
 				pictureAdapter.notifyDataSetChanged();
 			}
 		});

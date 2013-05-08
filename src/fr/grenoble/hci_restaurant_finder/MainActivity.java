@@ -32,7 +32,7 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 		
 		assetManager = getAssets();
-		restaurantSearcher = new RestaurantSearcher();
+		restaurantSearcher = new RestaurantSearcher(assetManager);
 		
 		locationButton = (ImageView) findViewById(R.id.locationButton);
 		picturesButton = (ImageView) findViewById(R.id.pictureButton);
@@ -104,7 +104,7 @@ public class MainActivity extends FragmentActivity {
 	
 	private void createPictureSearcher() {
 		LatLng position = locatorFragment.getPosition();
-		pictureSearcher = new PictureSearcher(position.latitude,position.longitude,locatorFragment.getRadius());
+		pictureSearcher = new PictureSearcher(position.latitude,position.longitude,locatorFragment.getRadius(),assetManager);
 	}
 	
 	protected PictureSearcher getPictureSearcher() {
@@ -116,8 +116,7 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	public void moveToRestaurantPage(ResultPicture pic) {
-		restaurantSearcher.setPicture(pic);
-		Restaurant r = restaurantSearcher.search();
+		Restaurant r = restaurantSearcher.search(pic);
 		RestaurantFragment restFrag = new RestaurantFragment(r);
 		
 		selected = 0;
