@@ -45,56 +45,9 @@ public class PictureCreatorCSV implements PictureCreator {
 	}
 	
 	private String[] split(String line) {
-		int occ = occurrences(line, "\"");
-		if (occ == 0) {
-			return line.split(",");
-		}
-		else if (occ == 2) {
-			String[] preSplit = line.split("\"");
-			ArrayList<String> result = new ArrayList<String>();
-			String[] before = preSplit[0].split(",");
-			String middle = preSplit[1];
-			String[] after = preSplit[2].split(",");
-			for (String s : before) {
-				result.add(s);
-			}
-			result.add(middle);
-			for (String s : after) {
-				result.add(s);
-			}
-			return result.toArray(new String[result.size()]);
-		}
-		else if (occ == 4) {
-			String[] preSplit = line.split("\"");
-			ArrayList<String> result = new ArrayList<String>();
-			String[] before = preSplit[0].split(",");
-			String middle1 = preSplit[1];
-			String[] middle = preSplit[2].split(",");
-			String middle2 = preSplit[3];
-			String[] after = preSplit[4].split(",");
-			for (String s : before) {
-				result.add(s);
-			}
-			result.add(middle1);
-			for (String s : middle) {
-				result.add(s);
-			}
-			result.add(middle2);
-			for (String s : after) {
-				result.add(s);
-			}
-			return result.toArray(new String[result.size()]); 
-		}
-		else return null;
+		return line.split("\t");
 	}
 	
-	private int occurrences(String line, String sub) {
-		int occurrences = 0;
-		for (int start = line.indexOf(sub, 0); start > -1; start = line.indexOf(sub, start)) {
-			occurrences++;
-		}
-		return occurrences;
-	}
 	
 	private HashSet<Category> parseCategories(String[] categories) {
 		HashSet<Category> result = new HashSet<Category>();
