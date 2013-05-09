@@ -26,21 +26,21 @@ public class RestaurantFromPictureCSV implements RestaurantFromPicture {
 			String firstLine = csvReader.nextLine();
 			while (csvReader.hasNext()) {
 				String line = csvReader.nextLine();
-				String[] quotesSeparated = line.split("\"");
-				String[] theRest = quotesSeparated[2].split(",");
-				int id = Integer.parseInt(quotesSeparated[0].split(",")[0]);
-				String name = quotesSeparated[0].split(",")[1];
-				String streetAddress = quotesSeparated[1];
-				String phone = theRest[0];
-				String URL = theRest[1];
-				double rating = Double.parseDouble(theRest[2]);
-				double latitude = Double.parseDouble(theRest[3]);
-				double longitude = Double.parseDouble(theRest[4]);
+				String[] fields = line.split("\t");
+				
+				int id = Integer.parseInt(fields[0]);
+				String name = fields[1];
+				String streetAddress = fields[2];
+				String phone = fields[3];
+				String URL = fields[4];
+				double rating = Double.parseDouble(fields[5]);
+				double latitude = Double.parseDouble(fields[6]);
+				double longitude = Double.parseDouble(fields[7]);
 				String[] hours = new String[7];
 				for (int i = 0; i < 7; i++) {
-					hours[i] = theRest[i+5];
+					hours[i] = fields[i+8];
 				}
-				String photo = theRest[12];
+				String photo = fields[15];
 				ArrayList<String> photos = null;
 				String map = null;
 				
