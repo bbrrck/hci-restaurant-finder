@@ -10,9 +10,6 @@ public class RestaurantSearcher {
 	
 	public RestaurantSearcher(AssetManager assets) {
 		this.assets = assets;
-	}
-	
-	public void setPicture(ResultPicture picture) {
 		finder = new RestaurantFromPictureCSV(assets);
 	}
 	
