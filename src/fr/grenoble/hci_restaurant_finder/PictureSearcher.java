@@ -31,6 +31,7 @@ public class PictureSearcher {
 		starred = new HashSet<ResultPicture>();
 		categories = new HashSet<Category>();
 		keywords = "";
+		keywordsDecomposed = new ArrayList<String>();
 		
 		PictureCreatorCSV pictureCreator = new PictureCreatorCSV(latitude, 
 				longitude, radius, restSearcher, assets);
@@ -105,11 +106,14 @@ public class PictureSearcher {
 		
 		ArrayList<ResultPicture> results = new ArrayList<ResultPicture>();
 		
-		for (ResultPicture p : starred) {
-			results.add(p);
+		if (starred != null) {
+			for (ResultPicture p : starred) {
+				results.add(p);
+			}
 		}
 		
-		if (categories.size() == 0 && keywordsDecomposed.size() == 0) {
+		if ((categories == null || categories.size() == 0) && 
+			(keywordsDecomposed == null || keywordsDecomposed.size() == 0)) {
 			for (ResultPicture p : pictures) {
 				if (results.indexOf(p) < 0) {
 					results.add(p);
@@ -120,9 +124,11 @@ public class PictureSearcher {
 			for (ResultPicture p : pictures) {
 				boolean toAdd = false;
 				if (results.indexOf(p) < 0) {
-					for (Category c : p.getCategories()) {
-						if (categories.contains(c)) {
-							toAdd = true;
+					if (categories != null) {
+						for (Category c : p.getCategories()) {
+							if (categories.contains(c)) {
+								toAdd = true;
+							}
 						}
 					}
 					

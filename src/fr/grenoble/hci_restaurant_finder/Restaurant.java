@@ -12,6 +12,7 @@ public class Restaurant {
 	
 	private String name;
 	private Address address;
+	private String addressString;
 	
 	private String[] hours;
 	
@@ -37,6 +38,7 @@ public class Restaurant {
 		this.address.setPhone(PhoneNumberUtils.formatNumber(phone));
 		this.address.setLatitude(latitude);
 		this.address.setLongitude(longitude);
+		this.addressString = address;
 		this.hours = hours;
 		this.map = map;
 		this.picture = picture;
@@ -59,6 +61,8 @@ public class Restaurant {
 	
 	public Address getAddress() { return address; }
 	public void setAddress(Address address) { this.address = address; }
+	
+	public String getAddressString() { return addressString; }
 	
 	public String[] getHours() { return hours; }
 	public void setHours(String[] hours) { this.hours = hours; }
