@@ -99,8 +99,8 @@ public class RestaurantFragment extends Fragment {
 		 	
 		 	buttonCall.setOnClickListener(new OnClickListener(){
 				public void onClick(View v) {
-					Intent callIntent = new Intent(Intent.ACTION_CALL);
-			        callIntent.setData(Uri.parse(restaurant.getPhoneNumber()));
+					Intent callIntent = new Intent(Intent.ACTION_DIAL);
+			        callIntent.setData(Uri.parse("tel:"+restaurant.getPhoneNumber()));
 			        startActivity(callIntent);
 				}
 			});
