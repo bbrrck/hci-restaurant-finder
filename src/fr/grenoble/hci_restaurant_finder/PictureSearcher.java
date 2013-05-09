@@ -10,27 +10,30 @@ public class PictureSearcher {
 	private double latitude;
 	private double longitude;
 	private double radius;
+	private RestaurantSearcher restaurantSearcher;
 	private HashSet<ResultPicture> starred;
 	private HashSet<Category> categories;
 	private String keywords;
+	private AssetManager assets;
 
 	private ArrayList<String> keywordsDecomposed;
 	
 	private ArrayList<ResultPicture> pictures;
 	
 	public PictureSearcher(double latitude, double longitude, double radius, 
-			AssetManager assets) {
+			AssetManager assets, RestaurantSearcher restSearcher) {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.radius = radius;
+		this.assets = assets;
 		
 		starred = new HashSet<ResultPicture>();
 		categories = new HashSet<Category>();
 		keywords = "";
 		
 		PictureCreatorCSV pictureCreator = new PictureCreatorCSV(latitude, 
-				longitude, radius, assets);
-		pictures = pictureCreator.getPictures();
+				longitude, radius, restSearcher, assets);
+		pictures = new ArrayList<ResultPicture>(pictureCreator.getPictures());
 	}
 	
 	public void starPicture(ResultPicture pic) {
@@ -64,6 +67,17 @@ public class PictureSearcher {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.radius = radius;
+		PictureCreatorCSV pictureCreator = new PictureCreatorCSV(latitude, 
+				longitude, radius, null, assets);
+		pictures = new ArrayList<ResultPicture>(pictureCreator.getPictures());
+	}
+	
+	public void setRestaurantSearcher(RestaurantSearcher restSearcher) {
+		this.restaurantSearcher = restSearcher;
+		PictureCreatorCSV pictureCreator = new PictureCreatorCSV(latitude, 
+				longitude, radius, restSearcher, assets);
+		pictures = new ArrayList<ResultPicture>(pictureCreator.getPictures());
+		
 	}
 	
 	private void fillNGrams(ArrayList<String> decompList, String wordString) {
@@ -93,13 +107,30 @@ public class PictureSearcher {
 			results.add(p);
 		}
 		
-		if (keywordsDecomposed != null) {
-			
-		}
-		
+		for (ResultPicture p : pictures) {
+			boolean toAdd = false;
+			if (results.indexOf(p) < 0) {
+				for (Category c : p.getCategories()) {
+					if (categories.contains(c)) {
+						toAdd = true;
+					}
+				}
+				
+				for (String tag : p.getTags()) {
+					if (keywordsDecomposed != null) {
+						for (String keyword : keywordsDecomposed) {
+							if (keyword.equalsIgnoreCase(tag)) {
+								toAdd = true;
+							}
+						}
+					}
+				}
+			}
+			if (toAdd) {
+				results.add(p);
+			}
+		}	
 		return results;
-		
-		//TODO SEARCH BASED ON CATEGORIES AND ATTRIBUTES OF STARRED STUFF
 	}
 
 }

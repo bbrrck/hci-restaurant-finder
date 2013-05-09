@@ -16,11 +16,13 @@ import android.util.Log;
 public class PictureCreatorCSV implements PictureCreator {
 	
 	private ArrayList<ResultPicture> pictures;
+	private RestaurantSearcher restSearcher;
 	
 	private String csvFilename = "csv/pictures.csv";
 	
 	public PictureCreatorCSV(double latitude, double longitude, double radius,
-			AssetManager assets) {
+			RestaurantSearcher restSearcher, AssetManager assets) {
+		this.restSearcher = restSearcher;
 		pictures = new ArrayList<ResultPicture>();
 		try {
 			Scanner csvReader = new Scanner(assets.open(csvFilename));
@@ -36,7 +38,18 @@ public class PictureCreatorCSV implements PictureCreator {
 				int restID = Integer.parseInt(separated[3]);
 				ResultPicture pic = new ResultPicture(false, tags, cats, 
 						restID, filename);
-				pictures.add(pic);				
+				if (restSearcher == null) {
+					pictures.add(pic);
+				}
+				else {
+					Restaurant rest = restSearcher.search(pic);
+					double rlat = rest.getAddress().getLatitude();
+					double rlong = rest.getAddress().getLongitude();
+					if (distance(rlat, rlong, latitude, longitude) <= radius) {
+						pictures.add(pic);
+					}
+				}
+								
 			}
 		} catch (Exception e) {
 			Log.e("PictureCreatorCSV", e.getCause().getLocalizedMessage());
@@ -93,6 +106,21 @@ public class PictureCreatorCSV implements PictureCreator {
 			}
 		}
 		return result;
+	}
+	
+	private double rad(double x) {
+		return x * Math.PI / 180;
+	}
+	
+	private double distance(double lat1, double long1, double lat2, double long2) {
+		double radius = 6371000;
+		double dlat = rad(lat1 - lat2);
+		double dlong = rad(long1 - long2);
+		double a = Math.sin(dlat/2) * Math.sin(dlat/2) +
+				Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(rad(dlong/2)) * Math.sin(rad(dlong/2));
+		double c = Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+		double d = radius * c;
+		return d;
 	}
 	
 	public ArrayList<ResultPicture> getPictures() { return pictures; }
