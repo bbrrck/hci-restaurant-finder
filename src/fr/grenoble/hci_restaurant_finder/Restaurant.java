@@ -42,7 +42,8 @@ public class Restaurant {
 		this.picture = picture;
 		this.rating = rating;
 		this.URL = URL;
-		this.foodPictures = new String[foodPictures.size()];
+		this.foodPictures = 
+				new String[foodPictures == null ? 0 : foodPictures.size()];
 		for (int i = 0; i < this.foodPictures.length; i++)
 			this.foodPictures[i] = foodPictures.get(i);		
 	}
