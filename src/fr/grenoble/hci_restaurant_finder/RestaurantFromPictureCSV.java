@@ -24,6 +24,7 @@ public class RestaurantFromPictureCSV implements RestaurantFromPicture {
 		try {
 			Scanner csvReader = new Scanner(assets.open(csvFilename));
 			String firstLine = csvReader.nextLine();
+			restaurants = new ArrayList<Restaurant>();
 			while (csvReader.hasNext()) {
 				String line = csvReader.nextLine();
 				String[] fields = line.split("\t");
