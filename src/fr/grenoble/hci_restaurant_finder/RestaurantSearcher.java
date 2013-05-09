@@ -12,10 +12,6 @@ public class RestaurantSearcher {
 		this.assets = assets;
 	}
 	
-	public RestaurantSearcher(ResultPicture picture) { 
-		finder = new RestaurantFromPictureCSV(assets);
-	}
-	
 	public void setPicture(ResultPicture picture) {
 		finder = new RestaurantFromPictureCSV(assets);
 	}

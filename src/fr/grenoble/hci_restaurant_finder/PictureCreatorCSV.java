@@ -119,7 +119,7 @@ public class PictureCreatorCSV implements PictureCreator {
 		double a = Math.sin(dlat/2) * Math.sin(dlat/2) +
 				Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(rad(dlong/2)) * Math.sin(rad(dlong/2));
 		double c = Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-		return = radius * c;
+		return radius * c;
 	}
 	
 	public ArrayList<ResultPicture> getPictures() { return pictures; }
