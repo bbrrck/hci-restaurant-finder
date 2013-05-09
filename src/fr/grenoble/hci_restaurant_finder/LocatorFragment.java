@@ -282,6 +282,7 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 	@Override
 	public void onTaskComplete(Address add) {
 
+		if (add!=null)
 		changeLocationOnMap(new LatLng(add.getLatitude(),add.getLongitude()));
 		
 	}

@@ -3,13 +3,12 @@ package fr.grenoble.hci_restaurant_finder;
 import java.util.ArrayList;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class ImageAdapter extends BaseAdapter {
 	
@@ -46,19 +45,43 @@ public class ImageAdapter extends BaseAdapter {
     	pictures.clear();
     }
     
+    public void starItem(int position, PictureSearcher pictureSearcher) {
+    	if (pictures.get(position).isStarred()) {
+    		pictures.get(position).unStar();
+    		pictureSearcher.unStarPicture(pictures.get(position));
+    	}
+    	else {
+    		pictures.get(position).star();
+    		pictureSearcher.starPicture(pictures.get(position));
+    	}
+    }
+    
     public void starmode (boolean b) {
     	starmode = b;
+    }
+    
+    public boolean getStarMode() {
+    	return starmode;
     }
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
-        View grid;
+        View grid = convertView;
         if (convertView == null) {  // if it's not recycled, initialize some attributes
-        	grid = new View(mContext);
             LayoutInflater inflater= (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             grid=inflater.inflate(R.layout.resultimage, parent, false);
-        } else {
-            grid = convertView;
+        }
+        
+        ImageView starimage = (ImageView) grid.findViewById(R.id.starImageView);
+        if (starmode) {
+        	if (pictures.get(position).isStarred())
+        	starimage.setImageResource(R.drawable.taste_star_selected_35);
+        	else
+        		starimage.setImageResource(R.drawable.taste_star_35);
+        	starimage.setVisibility(0);
+        }
+        else {
+        	starimage.setVisibility(8);
         }
 
         //imageView.setImageResource(mThumbIds[position]);

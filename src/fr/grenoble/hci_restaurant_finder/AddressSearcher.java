@@ -32,7 +32,7 @@ public class AddressSearcher extends AsyncTask<String,Void,Address>{
 			error = e.getMessage();
 		}
 		
-		if (temp!=null)
+		if (temp!=null && temp.size()!=0)
 		return temp.get(0);
 		
 		return null;

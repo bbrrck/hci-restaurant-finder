@@ -2,11 +2,13 @@ package fr.grenoble.hci_restaurant_finder;
 
 import java.util.ArrayList;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -16,7 +18,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class ResultsFragment extends Fragment{
@@ -52,8 +53,14 @@ public class ResultsFragment extends Fragment{
 
 	 	pictureGrid.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+	        	if (pictureAdapter.getStarMode()) {
+	        		pictureAdapter.starItem(position,pictureSearcher);
+	        		pictureAdapter.notifyDataSetChanged();
+	        	}
+	        	else {
 	            ResultPicture pic = (ResultPicture) pictureAdapter.getItem(position);
 	            ((MainActivity) getActivity()).moveToRestaurantPage(pic);
+	        	}
 	        }
 	    });
 	 	
@@ -65,6 +72,8 @@ public class ResultsFragment extends Fragment{
 					selected=1;
 					pictureAdapter.starmode(true);
 					pictureAdapter.notifyDataSetChanged();
+					layoutKeywords.setVisibility(8);
+					layoutCategories.setVisibility(8);
 				}
 				else {
 					selected = 0;
@@ -83,6 +92,8 @@ public class ResultsFragment extends Fragment{
 				{
 					layoutCategories.setVisibility(0);
 					layoutKeywords.setVisibility(8);
+					pictureAdapter.starmode(false);
+					pictureAdapter.notifyDataSetChanged();
 					selected=2;
 				}
 				else 
@@ -102,6 +113,8 @@ public class ResultsFragment extends Fragment{
 				{
 					layoutKeywords.setVisibility(0);
 					layoutCategories.setVisibility(8);
+					pictureAdapter.starmode(false);
+					pictureAdapter.notifyDataSetChanged();
 					selected=3;
 				}
 				else 
@@ -117,6 +130,12 @@ public class ResultsFragment extends Fragment{
 	 	
 	 	buttonRefresh.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
+				layoutKeywords.setVisibility(8);
+				layoutCategories.setVisibility(8);
+				selected = 0;
+				refreshPictureButtons();
+				pictureAdapter.starmode(false);
+				pictureSearcher.addKeywords(keywords.getText().toString());
 				pictureAdapter.addItem(new ResultPicture(false,null,null,0,"0")); //dummy code
 				pictureAdapter.notifyDataSetChanged();
 			}
@@ -164,6 +183,8 @@ public class ResultsFragment extends Fragment{
     }
 	
 	public void refreshPictureButtons() {
+		InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.hideSoftInputFromWindow(keywords.getWindowToken(), 0);
 		switch (selected) {
 		case 0: buttonStar.setImageDrawable(getResources().getDrawable(R.drawable.taste_nav_star_120));
 				buttonCategories.setImageDrawable(getResources().getDrawable(R.drawable.taste_nav_categories_120));
