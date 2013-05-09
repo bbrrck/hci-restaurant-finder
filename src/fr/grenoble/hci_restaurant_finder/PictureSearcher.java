@@ -19,6 +19,7 @@ public class PictureSearcher {
 	private ArrayList<String> keywordsDecomposed;
 	
 	private ArrayList<ResultPicture> pictures;
+	private ArrayList<ResultPicture> results;
 	
 	public PictureSearcher(double latitude, double longitude, double radius, 
 			AssetManager assets, RestaurantSearcher restSearcher) {
@@ -34,6 +35,7 @@ public class PictureSearcher {
 		PictureCreatorCSV pictureCreator = new PictureCreatorCSV(latitude, 
 				longitude, radius, restSearcher, assets);
 		pictures = new ArrayList<ResultPicture>(pictureCreator.getPictures());
+		this.results = new ArrayList<ResultPicture>(pictureCreator.getPictures());
 	}
 	
 	public void starPicture(ResultPicture pic) {
@@ -107,29 +109,39 @@ public class PictureSearcher {
 			results.add(p);
 		}
 		
-		for (ResultPicture p : pictures) {
-			boolean toAdd = false;
-			if (results.indexOf(p) < 0) {
-				for (Category c : p.getCategories()) {
-					if (categories.contains(c)) {
-						toAdd = true;
-					}
+		if (categories.size() == 0 && keywordsDecomposed.size() == 0) {
+			for (ResultPicture p : pictures) {
+				if (results.indexOf(p) < 0) {
+					results.add(p);
 				}
-				
-				for (String tag : p.getTags()) {
-					if (keywordsDecomposed != null) {
-						for (String keyword : keywordsDecomposed) {
-							if (keyword.equalsIgnoreCase(tag)) {
-								toAdd = true;
+			}
+		}
+		else {
+			for (ResultPicture p : pictures) {
+				boolean toAdd = false;
+				if (results.indexOf(p) < 0) {
+					for (Category c : p.getCategories()) {
+						if (categories.contains(c)) {
+							toAdd = true;
+						}
+					}
+					
+					for (String tag : p.getTags()) {
+						if (keywordsDecomposed != null) {
+							for (String keyword : keywordsDecomposed) {
+								if (keyword.equalsIgnoreCase(tag)) {
+									toAdd = true;
+								}
 							}
 						}
 					}
 				}
+				if (toAdd) {
+					results.add(p);
+				}
 			}
-			if (toAdd) {
-				results.add(p);
-			}
-		}	
+		}
+		this.results = results;
 		return results;
 	}
 
