@@ -104,7 +104,7 @@ public class MainActivity extends FragmentActivity {
 	
 	private void createPictureSearcher() {
 		LatLng position = locatorFragment.getPosition();
-		pictureSearcher = new PictureSearcher(position.latitude,position.longitude,locatorFragment.getRadius(),assetManager);
+		pictureSearcher = new PictureSearcher(position.latitude,position.longitude,locatorFragment.getRadius(),assetManager,restaurantSearcher);
 	}
 	
 	protected PictureSearcher getPictureSearcher() {

@@ -1,7 +1,10 @@
 package fr.grenoble.hci_restaurant_finder;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -60,12 +63,17 @@ public class RestaurantFragment extends Fragment {
 		 	header = (ImageView) inflatedView.findViewById(R.id.imageViewRestaurant);
 		 	
 		 	name = (TextView) inflatedView.findViewById(R.id.textViewRestaurantName);
-		 	//name.setText(restaurant.getName());
+		 	name.setText(restaurant.getName());
 		 	 
 		 	address = (TextView) inflatedView.findViewById(R.id.textViewRestaurantAddress);
-		 	//name.setText(restaurant.getAddress().toString());
+		 	address.setText(restaurant.getAddress().toString());
 		 	
 		 	hours = (TextView) inflatedView.findViewById(R.id.textViewOpening);
+		 	Calendar cal = Calendar.getInstance();
+		 	int day = cal.DAY_OF_WEEK;
+		 	if (day==0) day = 6;
+		 	else day = day-1;
+		 	hours.setText(restaurant.getHours()[day]);
 		 	
 		 	stars = new ArrayList<ImageView>();
 		 	
@@ -82,8 +90,8 @@ public class RestaurantFragment extends Fragment {
 		 	
 		 	buttonWeb.setOnClickListener(new OnClickListener(){
 				public void onClick(View v) {
-					//Intent myIntent = new Intent( Settings.ACTION_LOCATION_SOURCE_SETTINGS );
-					//startActivity(myIntent);
+					Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(restaurant.getURLString()));
+					startActivity(myIntent);
 				}
 			});
 		 	
@@ -91,7 +99,9 @@ public class RestaurantFragment extends Fragment {
 		 	
 		 	buttonCall.setOnClickListener(new OnClickListener(){
 				public void onClick(View v) {
-					
+					Intent callIntent = new Intent(Intent.ACTION_CALL);
+			        callIntent.setData(Uri.parse(restaurant.getPhoneNumber()));
+			        startActivity(callIntent);
 				}
 			});
 		 	

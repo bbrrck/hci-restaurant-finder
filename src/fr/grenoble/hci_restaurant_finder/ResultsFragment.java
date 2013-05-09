@@ -136,7 +136,8 @@ public class ResultsFragment extends Fragment{
 				refreshPictureButtons();
 				pictureAdapter.starmode(false);
 				pictureSearcher.addKeywords(keywords.getText().toString());
-				pictureAdapter.addItem(new ResultPicture(false,null,null,0,"0")); //dummy code
+				pictureAdapter.setItems(pictureSearcher.search());
+				//pictureAdapter.addItem(new ResultPicture(false,null,null,0,"0")); //dummy code
 				pictureAdapter.notifyDataSetChanged();
 			}
 		});
