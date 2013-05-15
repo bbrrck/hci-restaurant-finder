@@ -1,14 +1,19 @@
 package fr.grenoble.hci_restaurant_finder;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapFactory.Options;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 public class ImageAdapter extends BaseAdapter {
 	
@@ -71,6 +76,11 @@ public class ImageAdapter extends BaseAdapter {
             LayoutInflater inflater= (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             grid=inflater.inflate(R.layout.resultimage, parent, false);
         }
+        ImageView mImage = (ImageView) grid.findViewById(R.id.resultImageView);
+		
+        ImageLoader loader = new ImageLoader(mContext,mImage);
+		String str = pictures.get(position).getPicFile();
+		loader.execute(str);
         
         ImageView starimage = (ImageView) grid.findViewById(R.id.starImageView);
         if (starmode) {

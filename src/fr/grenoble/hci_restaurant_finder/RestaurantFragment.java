@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -24,6 +26,7 @@ import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class RestaurantFragment extends Fragment {
 	
@@ -61,12 +64,17 @@ public class RestaurantFragment extends Fragment {
 		 	 }
 		 	
 		 	header = (ImageView) inflatedView.findViewById(R.id.imageViewRestaurant);
-		 	
+		 	BitmapFactory.Options options = new BitmapFactory.Options();
+			//options.inSampleSize = 2;
+		 	String filename = restaurant.getPictureFilename();
+			Bitmap bm = BitmapFactory.decodeFile("/sdcard/restopics/"+filename, options);
+			header.setImageBitmap(bm);
+			
 		 	name = (TextView) inflatedView.findViewById(R.id.textViewRestaurantName);
 		 	name.setText(restaurant.getName());
 		 	 
 		 	address = (TextView) inflatedView.findViewById(R.id.textViewRestaurantAddress);
-		 	address.setText(restaurant.getAddress().toString());
+		 	address.setText(restaurant.getAddressString());
 		 	
 		 	hours = (TextView) inflatedView.findViewById(R.id.textViewOpening);
 		 	Calendar cal = Calendar.getInstance();
@@ -83,6 +91,11 @@ public class RestaurantFragment extends Fragment {
 		 	stars.add((ImageView) inflatedView.findViewById(R.id.imageViewStar4));
 		 	stars.add((ImageView) inflatedView.findViewById(R.id.imageViewStar5));
 		 	
+		 	double rating = restaurant.getRating();
+		 	
+		 	int i;
+		 	for (i=0; i<(int)rating; i++) stars.get(i).setImageResource(R.drawable.resto_rating_star_full);
+		 	if (rating-i>=0.5) stars.get(i).setImageResource(R.drawable.resto_rating_star_half);
 		 	
 		 	imageholder = (LinearLayout) inflatedView.findViewById(R.id.restaurantPictureHolder);
 		 	
@@ -105,7 +118,7 @@ public class RestaurantFragment extends Fragment {
 				}
 			});
 		 	
-		 	//position = new LatLng(restaurant.getCoordinates()[0], restaurant.getCoordinates()[1]);
+		 	position = new LatLng(restaurant.getCoordinates()[0], restaurant.getCoordinates()[1]);
 		 	
 	        return inflatedView;
 	    }
@@ -116,6 +129,13 @@ public class RestaurantFragment extends Fragment {
 		
 		 mapView.onResume();
 		 map = mapView.getMap();
+		 map.addMarker(new MarkerOptions().position(position));
+		 map.setMyLocationEnabled(true);
+		 CameraPosition cp = new CameraPosition.Builder()
+	        .zoom(12)
+	        .target(position)
+	        .build();
+		 map.animateCamera(CameraUpdateFactory.newCameraPosition(cp));
 		 
 	     super.onResume();
 	  }

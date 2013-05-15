@@ -128,4 +128,19 @@ public class MainActivity extends FragmentActivity {
 		transaction.commit();
 	}
 
+	@Override
+	public void onBackPressed() {
+		if (selected==0) {
+				selected = 2;
+				refreshPictureButtons();
+				createPictureSearcher();
+				resultsFragment.addPictureSearcher(pictureSearcher);
+				FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+				transaction.replace(R.id.fragment_content, resultsFragment);			
+				transaction.commit();
+		}
+		else {
+			super.onBackPressed();
+		}
+	}
 }
