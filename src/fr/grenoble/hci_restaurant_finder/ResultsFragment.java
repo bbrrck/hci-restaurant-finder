@@ -33,6 +33,8 @@ public class ResultsFragment extends Fragment{
 	private byte selected;
 	private Button buttonClearKeywords;
 	private EditText keywords;
+	private String keywordsText="";
+	private boolean[] categoryButtonValues;
 	private ArrayList<ToggleButton> categoryButtons;
 	private PictureSearcher pictureSearcher;
 
@@ -182,6 +184,29 @@ public class ResultsFragment extends Fragment{
 	 	
         return inflatedView;
     }
+	
+	@Override
+	public void onResume() {
+		keywords.setText(keywordsText);
+		if (categoryButtonValues!=null) {
+		for (int i=0;i<8;i++) {
+			categoryButtons.get(i).setChecked(categoryButtonValues[i]);
+		}
+		}
+		pictureAdapter.setItems(pictureSearcher.search());
+		pictureAdapter.notifyDataSetChanged();
+		super.onResume();
+	}
+	
+	@Override
+	public void onPause() {
+		keywordsText = keywords.getText().toString();
+		categoryButtonValues = new boolean[8];
+		for (int i=0;i<8;i++) {
+			categoryButtonValues[i] = categoryButtons.get(i).isChecked();
+		}
+		super.onPause();
+	}
 	
 	public void refreshPictureButtons() {
 		InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);

@@ -62,8 +62,10 @@ public class MainActivity extends FragmentActivity {
 				if (selected!=2) {
 				selected = 2;
 				refreshPictureButtons();
+				if (selected==1) {
 				createPictureSearcher();
 				resultsFragment.addPictureSearcher(pictureSearcher);
+				}
 				FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 				transaction.replace(R.id.fragment_content, resultsFragment);
 				//transaction.addToBackStack(null);				
@@ -96,17 +98,10 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 	
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-	
 	private void createPictureSearcher() {
 		LatLng position = locatorFragment.getPosition();
-		pictureSearcher = new PictureSearcher(position.latitude,position.longitude,locatorFragment.getRadius(),assetManager,restaurantSearcher);
+		//pictureSearcher = new PictureSearcher(position.latitude,position.longitude,locatorFragment.getRadius(),assetManager,restaurantSearcher);
+		pictureSearcher = new PictureSearcher(45.190748,5.727053,10000,assetManager,restaurantSearcher);
 	}
 	
 	protected PictureSearcher getPictureSearcher() {
@@ -144,8 +139,6 @@ public class MainActivity extends FragmentActivity {
 		if (selected==0) {
 				selected = 2;
 				refreshPictureButtons();
-				createPictureSearcher();
-				resultsFragment.addPictureSearcher(pictureSearcher);
 				FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 				transaction.replace(R.id.fragment_content, resultsFragment);			
 				transaction.commit();
