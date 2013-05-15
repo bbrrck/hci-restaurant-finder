@@ -66,31 +66,32 @@ public class PictureCreatorCSV implements PictureCreator {
 		HashSet<Category> result = new HashSet<Category>();
 		if (categories != null) {
 			for (String c : categories) {
-				if (c.equalsIgnoreCase("snacks")) {
+				String cat = c.trim();
+				if (cat.equalsIgnoreCase("snacks")) {
 					result.add(Category.SNACKS);
 				}
-				else if (c.equalsIgnoreCase("breakfast")) {
+				else if (cat.equalsIgnoreCase("breakfast")) {
 					result.add(Category.BREAKFAST);
 				}
-				else if (c.equalsIgnoreCase("main dishes")) {
+				else if (cat.equalsIgnoreCase("main dishes")) {
 					result.add(Category.MAIN_DISHES);
 				}
-				else if (c.equalsIgnoreCase("appetizers")) {
+				else if (cat.equalsIgnoreCase("appetizers")) {
 					result.add(Category.APPETIZERS);
 				}
-				else if (c.equalsIgnoreCase("drinks")) {
+				else if (cat.equalsIgnoreCase("drinks")) {
 					result.add(Category.DRINKS);
 				}
-				else if (c.equalsIgnoreCase("main dishes")) {
+				else if (cat.equalsIgnoreCase("main dishes")) {
 					result.add(Category.MAIN_DISHES);
 				}
-				else if (c.equalsIgnoreCase("fast food")) {
+				else if (cat.equalsIgnoreCase("fast food")) {
 					result.add(Category.FAST_FOOD);
 				}
-				else if (c.equalsIgnoreCase("healthy")) {
+				else if (cat.equalsIgnoreCase("healthy")) {
 					result.add(Category.HEALTHY);					
 				}
-				else if (c.equalsIgnoreCase("dessert")) {
+				else if (cat.equalsIgnoreCase("dessert")) {
 					result.add(Category.DESSERT);
 				}
 			}
