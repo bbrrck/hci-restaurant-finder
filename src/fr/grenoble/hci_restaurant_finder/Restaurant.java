@@ -89,6 +89,6 @@ public class Restaurant {
 	}
 	
 	public void setPictureFilenames(String[] filenames) { this.foodPictures = filenames; }
-	public void getPictureFilenames() { return foodPictures; }
+	public String[] getPictureFilenames() { return foodPictures; }
 	
 }

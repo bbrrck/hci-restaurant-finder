@@ -64,6 +64,7 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 	 @Override
 	    public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	                             Bundle savedInstanceState) {
+		 
 	        // Inflate the layout for this fragment
 		 	View inflatedView = inflater.inflate(R.layout.fragment_locator, container, false);
 		 	
@@ -168,6 +169,8 @@ public class LocatorFragment extends Fragment implements OnSeekBarChangeListener
 		  removeUpdates(); 
 		  
 		  mapView.onPause();
+		  
+		  circle = null;
 		  
 	     super.onPause();
 	  }
