@@ -1,5 +1,7 @@
 package fr.grenoble.hci_restaurant_finder;
 
+import java.util.ArrayList;
+
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -117,6 +119,15 @@ public class MainActivity extends FragmentActivity {
 
 	public void moveToRestaurantPage(ResultPicture pic) {
 		Restaurant r = restaurantSearcher.search(pic);
+		int restId = r.getID();
+		ArrayList<ResultPicture> pictures = pictureSearcher.getPictures();
+		ArrayList<String> filenames = new ArrayList<String>();
+		for (ResultPicture p : pictures) {
+			if (p.getRestaurantID() == restId) {
+				filenames.add(p.getPicFile());
+			}
+		}
+		r.setPictureFilenames(filenames.toArray(new String[filenames.size()]));
 		RestaurantFragment restFrag = new RestaurantFragment(r);
 		
 		selected = 0;

@@ -88,4 +88,7 @@ public class Restaurant {
 				{ this.address.getLatitude(), this.address.getLongitude() }; 
 	}
 	
+	public void setPictureFilenames(String[] filenames) { this.foodPictures = filenames; }
+	public void getPictureFilenames() { return foodPictures; }
+	
 }

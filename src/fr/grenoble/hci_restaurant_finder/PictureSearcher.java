@@ -151,4 +151,6 @@ public class PictureSearcher {
 		return results;
 	}
 
+	public ArrayList<ResultPicture> getPictures() { return pictures; }
+	
 }
