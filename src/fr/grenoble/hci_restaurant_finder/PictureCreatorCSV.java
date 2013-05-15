@@ -82,9 +82,6 @@ public class PictureCreatorCSV implements PictureCreator {
 				else if (cat.equalsIgnoreCase("drinks")) {
 					result.add(Category.DRINKS);
 				}
-				else if (cat.equalsIgnoreCase("main dishes")) {
-					result.add(Category.MAIN_DISHES);
-				}
 				else if (cat.equalsIgnoreCase("fast food")) {
 					result.add(Category.FAST_FOOD);
 				}
