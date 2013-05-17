@@ -109,7 +109,9 @@ public class PictureSearcher {
 		/* add starred pictures to results list	 */
 		if (starred != null) {
 			for (ResultPicture p : starred) {
-				results.add(p);
+				if (results.indexOf(p) < 0) {
+					results.add(p);
+				}
 			}
 		}
 		
@@ -140,8 +142,8 @@ public class PictureSearcher {
 						}
 					}
 					
-					/* check based on tags */
-					boolean tagMatch = false;
+					/* MUHAHA check based on tags */
+					boolean tagMatch = (p.getTags() == null || p.getTags().size() == 0);
 					for (String tag : p.getTags()) {
 						if (keywordsDecomposed != null && keywordsDecomposed.size() > 0) {
 							for (String keyword : keywordsDecomposed) {
@@ -157,7 +159,7 @@ public class PictureSearcher {
 					}
 					
 				}
-				if (toAdd) {
+				if (toAdd && results.indexOf(p) < 0) {
 					results.add(p);
 				}
 			}
