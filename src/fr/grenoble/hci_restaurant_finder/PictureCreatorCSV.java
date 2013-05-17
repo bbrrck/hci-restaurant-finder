@@ -31,9 +31,9 @@ public class PictureCreatorCSV implements PictureCreator {
 				String line = csvReader.nextLine();
 				String[] separated = split(line);
 				String filename = separated[0];
-				String[] rp_categories = separated[1].split(", ");
+				String[] rp_categories = separated[1].split(",");
 				HashSet<Category> cats = parseCategories(rp_categories);
-				String[] rp_tags = separated[2].split(", ");
+				String[] rp_tags = separated[2].split(",");
 				HashSet<String> tags = parseTags(rp_tags);
 				int restID = Integer.parseInt(separated[3]);
 				ResultPicture pic = new ResultPicture(false, tags, cats, 
