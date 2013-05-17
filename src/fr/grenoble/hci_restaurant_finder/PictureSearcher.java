@@ -139,16 +139,19 @@ public class PictureSearcher {
 					}
 					
 					/* check based on tags */
+					boolean tagMatch = false;
 					for (String tag : p.getTags()) {
 						if (keywordsDecomposed != null) {
-							boolean tagMatch = false;
 							for (String keyword : keywordsDecomposed) {
 								if (keyword.equalsIgnoreCase(tag)) {
 									tagMatch = true;
 								}
-							}
-							toAdd = toAdd && tagMatch;
+							}							
 						}
+						else {
+							tagMatch = true;
+						}
+						toAdd = toAdd && tagMatch;
 					}
 				}
 				if (toAdd) {
