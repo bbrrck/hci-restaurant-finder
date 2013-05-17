@@ -131,9 +131,10 @@ public class PictureSearcher {
 					
 					/* check based on categories */
 					if (categories != null) {
-						for (Category c : p.getCategories()) {
-							if (!categories.contains(c)) {
-								toAdd = false;
+					
+						for (Category c : categories) { // looping through selected categories
+							if (!p.getCategories().contains(c)) { //check if category c is in picture's categories
+								toAdd = false; // if not, then categories is not a subset of the picture's categories
 								break;
 							}
 						}
