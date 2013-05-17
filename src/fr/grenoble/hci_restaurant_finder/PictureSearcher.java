@@ -140,21 +140,22 @@ public class PictureSearcher {
 						}
 					}
 					
-//					/* check based on tags */
-//					boolean tagMatch = false;
-//					for (String tag : p.getTags()) {
-//						if (keywordsDecomposed != null && keywordsDecomposed.size() > 0) {
-//							for (String keyword : keywordsDecomposed) {
-//								if (keyword.equalsIgnoreCase(tag)) {
-//									tagMatch = true;
-//								}
-//							}							
-//						}
-//						else {
-//							tagMatch = true;
-//						}
-//						toAdd = toAdd && tagMatch;
-//					}
+					/* check based on tags */
+					boolean tagMatch = false;
+					for (String tag : p.getTags()) {
+						if (keywordsDecomposed != null && keywordsDecomposed.size() > 0) {
+							for (String keyword : keywordsDecomposed) {
+								if (keyword.equalsIgnoreCase(tag)) {
+									tagMatch = true;
+								}
+							}							
+						}
+						else {
+							tagMatch = true;
+						}
+						toAdd = toAdd && tagMatch;
+					}
+					
 				}
 				if (toAdd) {
 					results.add(p);
