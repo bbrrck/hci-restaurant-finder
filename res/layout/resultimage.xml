@@ -8,7 +8,7 @@
 			android:id="@+id/resultImageView"
             android:layout_width="200px"
             android:layout_height="200px"
-            android:background="#0000FF"
+            android:background="#F1F1F1"
     />
     
     <ImageView 

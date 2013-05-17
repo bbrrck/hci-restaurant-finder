@@ -7,8 +7,9 @@
 
     <ImageView
         android:id="@+id/imageViewRestaurant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="180px"
+        android:scaleType="centerCrop"
     />
 
     <TextView
@@ -18,7 +19,7 @@
         android:text="Name"
         android:gravity="center"
         android:textColor="#CC0000"
-        android:padding="6dp"
+        android:padding="3dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -27,14 +28,14 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="#666666"
-        android:padding="4dp"
+        android:padding="2dp"
         android:text="address" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="4dp" >
+        android:padding="2dp" >
 
         <TextView
             android:id="@+id/textView3"
@@ -55,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="4dp"
+        android:padding="2dp"
          >
         
         <ImageView
@@ -100,11 +101,16 @@
         
     </LinearLayout>
 
+    <HorizontalScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="100px" >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
-        android:id="@+id/restaurantPictureHolder" >
+        android:id="@+id/restaurantPictureHolder"
+        android:orientation="horizontal" >
     </LinearLayout>
+    </HorizontalScrollView>
     
     <RelativeLayout 
         android:layout_width="match_parent"
@@ -131,7 +137,7 @@
         android:layout_height="wrap_content"
         android:text="Call"
         android:background="@drawable/greenbutton"
-        android:padding="13dp"
+        android:padding="11dp"
         android:textColor="#FFFFFF"
         android:layout_weight="1" />
         
@@ -141,7 +147,7 @@
         android:layout_height="wrap_content"
         android:text="Visit website"
         android:background="@drawable/redbutton"
-        android:padding="13dp"
+        android:padding="11dp"
         android:textColor="#FFFFFF"
         android:layout_weight="1" />
         </TableRow>

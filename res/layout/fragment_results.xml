@@ -172,11 +172,11 @@
         android:scaleType="centerCrop"
         android:layout_weight="1" />
     
-    <ImageView
+    <Button
         android:id="@+id/buttonRefresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/taste_button_refresh_120"
+        android:background="@drawable/refreshtypebutton"
         android:scaleType="centerCrop"
         android:layout_weight="1" />
 
