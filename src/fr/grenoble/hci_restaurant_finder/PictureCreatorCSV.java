@@ -100,7 +100,8 @@ public class PictureCreatorCSV implements PictureCreator {
 		HashSet<String> result = new HashSet<String>();
 		if (tags != null) {
 			for (String t : tags) {
-				result.add(t);
+				result.add(t.trim()); 
+				// motha fucking breadcrumbs, yiss
 			}
 		}
 		return result;
