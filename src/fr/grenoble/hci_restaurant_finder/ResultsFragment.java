@@ -29,7 +29,7 @@ public class ResultsFragment extends Fragment{
 	private ImageView buttonCategories;
 	private LinearLayout layoutKeywords;
 	private ImageView buttonKeywords;
-	private ImageView buttonRefresh;
+	private Button buttonRefresh;
 	private byte selected;
 	private Button buttonClearKeywords;
 	private EditText keywords;
@@ -128,7 +128,7 @@ public class ResultsFragment extends Fragment{
 			}
 		});
 	 	
-	 	buttonRefresh = (ImageView) inflatedView.findViewById(R.id.buttonRefresh);
+	 	buttonRefresh = (Button) inflatedView.findViewById(R.id.buttonRefresh);
 	 	
 	 	buttonRefresh.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {

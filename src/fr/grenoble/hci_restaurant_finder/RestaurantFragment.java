@@ -79,9 +79,9 @@ public class RestaurantFragment extends Fragment {
 		 	hours = (TextView) inflatedView.findViewById(R.id.textViewOpening);
 		 	Calendar cal = Calendar.getInstance();
 		 	int day = cal.DAY_OF_WEEK;
-		 	if (day==0) day = 6;
+		 	if (day==1) day = 7;
 		 	else day = day-1;
-		 	hours.setText(restaurant.getHours()[day]);
+		 	hours.setText(restaurant.getHours()[day-1]);
 		 	
 		 	stars = new ArrayList<ImageView>();
 		 	
@@ -98,6 +98,27 @@ public class RestaurantFragment extends Fragment {
 		 	if (rating-i>=0.5) stars.get(i).setImageResource(R.drawable.resto_rating_star_half);
 		 	
 		 	imageholder = (LinearLayout) inflatedView.findViewById(R.id.restaurantPictureHolder);
+		 	final String[] tempfiles = restaurant.getPictureFilenames();
+		 	for (int j=0;j<tempfiles.length;j++) {
+		 		ImageView imageView = new ImageView(getActivity());
+		 		LinearLayout.LayoutParams vp = 
+		 		    new LinearLayout.LayoutParams(100, 100);
+		 		imageView.setLayoutParams(vp);        
+				options.inSampleSize = 4;
+				bm = BitmapFactory.decodeFile("/sdcard/foodpics/"+tempfiles[j], options); 
+				final int tempfile = j;
+				imageView.setImageBitmap(bm);
+				imageView.setOnClickListener(new OnClickListener(){
+						public void onClick(View v) {
+							Intent myIntent = new Intent(getActivity(), GalleryActivity.class);
+							myIntent.putExtra("restoName", restaurant.getName());
+							myIntent.putExtra("initPic", tempfile);
+							myIntent.putExtra("imageFiles", tempfiles);
+							startActivity(myIntent);
+						}
+				});
+		 		imageholder.addView(imageView); 
+		 	}
 		 	
 		 	buttonWeb = (Button) inflatedView.findViewById(R.id.buttonVisit);
 		 	
@@ -147,20 +168,5 @@ public class RestaurantFragment extends Fragment {
 		  
 	     super.onPause();
 	  }
-	
-	private void changeLocationOnMap(LatLng coordinates) {
-		
-		position = coordinates;
-		
-		CameraPosition cp = new CameraPosition.Builder()
-        .zoom(12)
-        .target(position)
-        .build();
-		
-        map.animateCamera(CameraUpdateFactory.newCameraPosition(cp));
-		
-		//if (ownself!=null) ownself.setPosition(position);
-        
-	}
 
 }

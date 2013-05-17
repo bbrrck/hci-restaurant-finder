@@ -60,12 +60,12 @@ public class MainActivity extends FragmentActivity {
 		picturesButton.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
 				if (selected!=2) {
-				selected = 2;
-				refreshPictureButtons();
 				if (selected==1) {
 				createPictureSearcher();
 				resultsFragment.addPictureSearcher(pictureSearcher);
 				}
+				selected = 2;
+				refreshPictureButtons();
 				FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 				transaction.replace(R.id.fragment_content, resultsFragment);
 				//transaction.addToBackStack(null);				
@@ -100,8 +100,8 @@ public class MainActivity extends FragmentActivity {
 	
 	private void createPictureSearcher() {
 		LatLng position = locatorFragment.getPosition();
-		//pictureSearcher = new PictureSearcher(position.latitude,position.longitude,locatorFragment.getRadius(),assetManager,restaurantSearcher);
-		pictureSearcher = new PictureSearcher(45.190748,5.727053,10000,assetManager,restaurantSearcher);
+		pictureSearcher = new PictureSearcher(position.latitude,position.longitude,locatorFragment.getRadius(),assetManager,restaurantSearcher);
+		//pictureSearcher = new PictureSearcher(45.190748,5.727053,10000,assetManager,restaurantSearcher);
 	}
 	
 	protected PictureSearcher getPictureSearcher() {
