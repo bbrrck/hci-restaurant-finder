@@ -106,12 +106,14 @@ public class PictureSearcher {
 		
 		ArrayList<ResultPicture> results = new ArrayList<ResultPicture>();
 		
+		/* add starred pictures to results list	 */
 		if (starred != null) {
 			for (ResultPicture p : starred) {
 				results.add(p);
 			}
 		}
 		
+		/* no categories, no keywords -> add everything (if not already there) */
 		if ((categories == null || categories.size() == 0) && 
 			(keywordsDecomposed == null || keywordsDecomposed.size() == 0)) {
 			for (ResultPicture p : pictures) {
@@ -121,24 +123,31 @@ public class PictureSearcher {
 			}
 		}
 		else {
+			
+			
 			for (ResultPicture p : pictures) {
-				boolean toAdd = false;
+				boolean toAdd = true;
 				if (results.indexOf(p) < 0) {
 					if (categories != null) {
+						
+						/* check based on categories */
 						for (Category c : p.getCategories()) {
-							if (categories.contains(c)) {
-								toAdd = true;
+							if (!categories.contains(c)) {
+								toAdd = false;
 							}
 						}
 					}
 					
+					/* check based on tags */
 					for (String tag : p.getTags()) {
 						if (keywordsDecomposed != null) {
+							boolean tagMatch = false;
 							for (String keyword : keywordsDecomposed) {
 								if (keyword.equalsIgnoreCase(tag)) {
-									toAdd = true;
+									tagMatch = true;
 								}
 							}
+							toAdd = toAdd && tagMatch;
 						}
 					}
 				}
