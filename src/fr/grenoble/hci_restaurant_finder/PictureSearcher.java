@@ -54,7 +54,7 @@ public class PictureSearcher {
 	
 	public void addKeywords(String words) {
 		if (words != null && words.matches("\\w+")) {	
-			keywords = words.replaceAll("\\s+", " ").trim();			
+			keywords = words.replaceAll(",*\\s+", " ").trim();			
 			keywordsDecomposed = new ArrayList<String>();
 			fillNGrams(keywordsDecomposed, keywords);				
 		}
@@ -142,22 +142,25 @@ public class PictureSearcher {
 						}
 					}
 					
-					/* MUHAHA check based on tags */
-					boolean tagMatch = (p.getTags() == null || p.getTags().size() == 0);
-					for (String tag : p.getTags()) {
-						if (keywordsDecomposed != null && keywordsDecomposed.size() > 0) {
-							for (String keyword : keywordsDecomposed) {
-								if (keyword.equalsIgnoreCase(tag)) {
-									tagMatch = true;
+					if (!toAdd) { continue; }
+					else {
+						/* check based on tags */
+						boolean tagMatch = (p.getTags() == null || p.getTags().size() == 0);
+						for (String tag : p.getTags()) { // get the picture's tags
+							if (keywordsDecomposed != null && keywordsDecomposed.size() > 0) {
+								for (String keyword : keywordsDecomposed) { // get the keywords we're searching for
+									if (keyword.equalsIgnoreCase(tag)) {
+										tagMatch = true;
+										break;
+									}
 								}
-							}							
+							}
+							else {
+								tagMatch = true;
+							}
+							toAdd = toAdd && tagMatch;
 						}
-						else {
-							tagMatch = true;
-						}
-						toAdd = toAdd && tagMatch;
-					}
-					
+					}					
 				}
 				if (toAdd && results.indexOf(p) < 0) {
 					results.add(p);
