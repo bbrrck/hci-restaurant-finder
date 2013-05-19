@@ -157,6 +157,7 @@ public class RestaurantFragment extends Fragment {
 	        .target(position)
 	        .build();
 		 map.animateCamera(CameraUpdateFactory.newCameraPosition(cp));
+		 map.getUiSettings().setMyLocationButtonEnabled(false);
 		 
 	     super.onResume();
 	  }

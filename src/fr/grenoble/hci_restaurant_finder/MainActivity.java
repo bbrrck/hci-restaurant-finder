@@ -62,6 +62,7 @@ public class MainActivity extends FragmentActivity {
 				if (selected!=2) {
 				if (selected==1) {
 				createPictureSearcher();
+				resultsFragment.scheduleInit();
 				resultsFragment.addPictureSearcher(pictureSearcher);
 				}
 				selected = 2;

@@ -37,6 +37,7 @@ public class ResultsFragment extends Fragment{
 	private boolean[] categoryButtonValues;
 	private ArrayList<ToggleButton> categoryButtons;
 	private PictureSearcher pictureSearcher;
+	private boolean scheduledinit = false;
 
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -187,11 +188,20 @@ public class ResultsFragment extends Fragment{
 	
 	@Override
 	public void onResume() {
+		if (scheduledinit==false) {
 		keywords.setText(keywordsText);
 		if (categoryButtonValues!=null) {
 		for (int i=0;i<8;i++) {
 			categoryButtons.get(i).setChecked(categoryButtonValues[i]);
 		}
+		}
+		}
+		else {
+			keywords.setText("");
+			for (int i=0;i<8;i++) {
+				categoryButtons.get(i).setChecked(false);
+			}
+			scheduledinit = false;
 		}
 		pictureAdapter.setItems(pictureSearcher.search());
 		pictureAdapter.notifyDataSetChanged();
@@ -234,6 +244,10 @@ public class ResultsFragment extends Fragment{
 	
 	public void addPictureSearcher(PictureSearcher s) {
 		pictureSearcher = s;
+	}
+	
+	public void scheduleInit() {
+		scheduledinit  = true;
 	}
 	
 }
