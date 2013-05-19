@@ -117,6 +117,12 @@ public class PictureSearcher {
 		return true;
 	}
 	
+	/**
+	 * check whether our keywords match with any of the picture's
+	 * Tibor is a silly goose
+	 * @param pic
+	 * @return
+	 */
 	private boolean tagMatch(ResultPicture pic) {
 		if (keywordsDecomposed == null || keywordsDecomposed.size() == 0) return true;
 		
@@ -125,7 +131,6 @@ public class PictureSearcher {
 				if (keyword.equalsIgnoreCase(tag)) return true;
 			}
 		}
-		
 		return false;
 	}
 	
@@ -147,7 +152,8 @@ public class PictureSearcher {
 				results.add(pic);
 			}
 		}
-		
+
+
 //		/* no categories, no keywords -> add everything (if not already there) */
 //		if ((categories == null || categories.size() == 0) && 
 //			(keywordsDecomposed == null || keywordsDecomposed.size() == 0)) {
