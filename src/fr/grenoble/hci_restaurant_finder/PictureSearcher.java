@@ -53,7 +53,7 @@ public class PictureSearcher {
 	public void removeCategoryFilter(Category cat) { categories.remove(cat); }
 	
 	public void addKeywords(String words) {
-		if (words != null && words.matches("\\w+")) {
+		if (words != null && words.trim().length() > 0) {
 			keywords = words.replaceAll(",+", " ");
 			keywords = keywords.replaceAll("\\s+", " ").trim();			
 			keywordsDecomposed = new ArrayList<String>();
