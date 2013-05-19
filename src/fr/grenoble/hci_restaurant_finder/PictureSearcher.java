@@ -63,7 +63,7 @@ public class PictureSearcher {
 	
 	public void clearKeywords() {
 		keywords = "";
-		keywordsDecomposed = null;
+		keywordsDecomposed = new ArrayList<String>();
 	}
 	
 	public void setLocation(double latitude, double longitude, double radius) {
