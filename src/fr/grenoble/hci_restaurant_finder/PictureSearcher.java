@@ -54,11 +54,10 @@ public class PictureSearcher {
 	
 	public void addKeywords(String words) {
 		if (words != null && words.matches("\\w+")) {	
-			keywords = words.replaceAll(",*\\s+", " ").trim();			
+			keywords = words.replaceAll(",*\\s*", " ").trim();			
 			keywordsDecomposed = new ArrayList<String>();
 			fillNGrams(keywordsDecomposed, keywords);				
 		}
-		
 	}
 	
 	public void clearKeywords() {
