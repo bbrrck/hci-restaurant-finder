@@ -103,13 +103,14 @@ public class PictureSearcher {
 	
 	/**
 	 * check whether our categories are a subset of the picture's 
+	 * Elizabeth fucked it up.
 	 * @param pic
 	 * @return
 	 */
 	private boolean categoryMatch(ResultPicture pic) {
 		if (categories == null) return true;
 		
-		for (category c : categories) {
+		for (Category c : categories) {
 			if (!pic.getCategories().contains(c)) {
 				return false;
 			}
@@ -148,7 +149,7 @@ public class PictureSearcher {
 		}
 		
 		for (ResultPicture pic : pictures) {
-			if (categoryMatch(pic) && tagMatch(pic) && result.indexOf(pic) < 0) {
+			if (categoryMatch(pic) && tagMatch(pic) && results.indexOf(pic) < 0) {
 				results.add(pic);
 			}
 		}
