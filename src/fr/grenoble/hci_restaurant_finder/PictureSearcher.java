@@ -145,6 +145,7 @@ public class PictureSearcher {
 			}
 		}
 		
+		// beautiful
 		for (ResultPicture pic : pictures) {
 			boolean cat = true;
 			if (categories != null && categories.size() > 0)
