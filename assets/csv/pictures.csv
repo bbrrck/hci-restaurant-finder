@@ -1,0 +1,446 @@
+file	categories	tags	restaurant id
+salad001.jpg	main dishes	salad,vegetables,nuts,vegetarian,gluten-free,vegan,light,lactose-free	1
+salad002.jpg	main dishes	salad,vegetables,nuts,vegetarian,vegan,light,lactose-free	7
+salad003.jpg	main dishes	salad,bread,cheese,vegetarian	8
+salad004.jpg	main dishes	salad,vegetables,vegetarian,vegan,gluten-free,lactose-free	12
+salad005.jpg	main dishes	salad,vegetables,potato	16
+salad006.jpg	main dishes	salad,egg,bread,cheese,vegetables,vegetarian	20
+salad007.jpg	main dishes	salad,chicken,bread,vegetables,cheese	23
+salad008.jpg	main dishes	salad,chicken,vegetables,cheese,gluten-free	23
+salad009.jpg	main dishes	salad,vegetables,gluten-free,lactose-free	1
+salad010.jpg	main dishes	salad,vegetables,gluten-free,lactose-free,nuts	7
+salad011.jpg	main dishes	salad,charcuterie,bread,vegetables,lactose-free	8
+salad012.jpg	main dishes	salad,vegetables,cheese,vegetarian	12
+salad013.jpg	main dishes	salad,vegetables,vegetarian,egg,lactose-free,gluten-free	16
+salad014.jpg	main dishes	salad,vegetarian,vegan,gluten-free,lactose-free	20
+salad015.jpg	main dishes	salad,vegetables,gluten-free,lactose-free,vegetarian,vegan	23
+salad016.jpg	main dishes	salad,vegetarian,vegan gluten-free,lactose-free,vegetables	23
+salad017.jpg	main dishes	salad,vegetarian,vegetables,vegan,lactose-free,egg,gluten-free	1
+salad018.jpg	main dishes	salad,vegetables,vegetarian,vegan,gluten-free,lactose-free	7
+salad019.jpg	main dishes	salad,vegetables,vegetarian,vegan,gluten-free,lactose-free	8
+salad020.jpg	main dishes	salad,vegetarian,vegan,gluten-free,lactose-free	12
+salad021.jpg	main dishes	salad,seafood,vegetables,gluten-free,lactose-free	16
+salad022.jpg	main dishes	salad,fungi,red meat,vegetables,gluten-free,lactose-free	20
+salad023.jpg	main dishes	salad,vegetables,vegetarian,gluten-free	23
+salad024.jpg	main dishes	salad,vegetarian,gluten-free,vegan	23
+salad026.jpg	main dishes	salad,red meat,vegetables,gluten-free,lactose-free	7
+salad027.jpg	main dishes	salad,seafood,vegetables,gluten-free,lactose-free	8
+salad028.jpg	main dishes	salad,chicken,vegetables,gluten-free	12
+salad029.jpg	main dishes	salad,fruit,nuts,vegetables,vegetarian,vegan,gluten-free,lactose-free	16
+salad030.jpg	main dishes	salad,vegetarian,bread,chicken	20
+salad031.jpg	main dishes	salad,chicken,vegetables,gluten-free,nuts	23
+salad032.jpg	main dishes	salad,vegetables,gluten-free,lactose-free,vegetarian,vegan	23
+salad033.jpg	main dishes	salad,vegetables,vegetarian,gluten-free	20
+appetizer001.jpg	appetizers	vegetables,lactose-free,vegetarian,vegan	11
+appetizer002.jpg	appetizers	vegetarian,vegan,gluten-free,lactose-free,potato	14
+appetizer003.jpg	appetizers,healthy	vegetarian,vegetables,gluten-free,light,cheese	17
+appetizer004.jpg	appetizers	lactose-free,porc,vegetables	18
+appetizer005.jpg	appetizers	red meat,vegetables,spicy	19
+appetizer006.jpg	appetizers	chicken,vegetables,lactose-free	20
+appetizer007.jpg	appetizers	chicken,vegetables,spicy,gluten-free	21
+appetizer008.jpg	appetizers	chicken,gluten-free,lactose-free	22
+appetizer009.jpg	appetizers	chicken,gluten-free,lactose-free	11
+appetizer010.jpg	appetizers	potato,gluten-free,lactose-free,vegetarian,vegan	14
+appetizer011.jpg	appetizers,healthy	salad,bread,vegetarian,vegan,lactose-free,vegetables	17
+appetizer012.jpg	appetizers	vegetables,vegetarian,vegan,lactose-free	18
+appetizer013.jpg	appetizers	potato,gluten-free,lactose-free,vegetarian,vegan	19
+appetizer014.jpg	appetizers	vegetables,vegetarian,vegan,lactose-free	20
+appetizer015.jpg	appetizers	gluten-free,charcuterie,cheese,vegetables	21
+appetizer016.jpg	appetizers	chicken,gluten-free,lactose-free	22
+appetizer017.jpg	appetizers,healthy	vegetables,vegetarian,gluten-free	11
+appetizer018.jpg	appetizers,healthy	vegetables,vegetarian,gluten-free	14
+appetizer019.jpg	appetizers	seafood,gluten-free,lactose-free	17
+appetizer020.jpg	appetizers,snacks	vegetarian,vegan,bread,vegetables,lactose-free	18
+appetizer021.jpg	appetizers	vegetables,vegetarian,vegan,lactose-free	19
+appetizer022.jpg	appetizers	potato,gluten-free,lactose-free,vegetarian,vegan	20
+breakfast001.jpg	breakfast,snacks	bread,lactose-free,vegetarian	1
+breakfast002.jpg	breakfast	egg,potato,charcuterie,gluten-free,lactose-free	2
+breakfast003.jpg	breakfast	egg,bread,lactose-free	3
+breakfast004.jpg	breakfast	vegetarian	4
+breakfast005.jpg	breakfast	bread,lactose-free,vegetarian	5
+breakfast006.jpg	breakfast,snacks	vegetarian,viennoiserie	6
+breakfast007.jpg	breakfast,snacks	vegetarian,viennoiserie	7
+breakfast008.jpg	breakfast,snacks	vegetarian,viennoiserie	8
+breakfast009.jpg	breakfast,snacks	vegetarian,chocolate,viennoiserie	9
+breakfast010.jpg	breakfast	charcuterie,egg,lactose-free,gluten-free	1
+breakfast011.jpg	breakfast	egg,lactose-free,bread	2
+breakfast012.jpg	breakfast	egg,viennoiserie,lactose-free	3
+breakfast013.jpg	breakfast,snacks	vegetarian,chocolate,viennoiserie	4
+breakfast014.jpg	breakfast,snacks,appetizers	vegetarian,chocolate,viennoiserie	5
+breakfast015.jpg	breakfast,snacks	vegetarian,chocolate,viennoiserie	6
+breakfast016.jpg	breakfast	vegetarian	7
+breakfast017.jpg	breakfast	vegetarian	8
+breakfast018.jpg	breakfast,snacks	bread,charcuterie,cheese	9
+breakfast019.jpg	breakfast	vegetarian,tea,viennoiserie	1
+breakfast020.jpg	breakfast,snacks	vegetarian,lactose-free,viennoiserie	2
+breakfast021.jpg	breakfast	egg,charcuterie,potato,lactose-free	3
+breakfast022.jpg	breakfast	bread,egg,vegetarian,lactose-free	4
+breakfast023.jpg	breakfast,snacks	vegetarian,chocolate,viennoiserie	5
+breakfast024.jpg	breakfast	vegetarian	6
+burger001.jpg	main dishes,fast food	red meat,potato,cheese,bread	2
+burger002.jpg	main dishes,fast food	red meat,potato,cheese,bread,spicy	5
+burger003.jpg	main dishes,fast food	red meat,potato,cheese,bread	9
+burger004.jpg	main dishes,fast food	red meat,potato,cheese,bread	11
+burger005.jpg	main dishes	red meat,potato,cheese,bread	2
+burger006.jpg	main dishes	red meat,potato,cheese,bread	5
+burger007.jpg	main dishes	red meat,potato,cheese,bread,charcuterie	9
+burger008.jpg	main dishes	red meat,potato,cheese,bread	11
+chicken001.jpg	main dishes,healthy	lactose-free,chicken,pasta,vegetables	1
+chicken002.jpg	main dishes	chicken	4
+chicken003.jpg	main dishes,healthy	light,chicken,vegetables,lactose-free,gluten-free,potato	8
+chicken004.jpg	main dishes	chicken,pasta,fungi	14
+chicken005.jpg	main dishes,healthy	chicken,vegetables,lactose-free,gluten-free,light	16
+chicken006.jpg	main dishes,healthy	chicken,vegetables,lactose-free,gluten-free,light	21
+chicken007.jpg	main dishes	chicken,vegetables,rice,lactose-free,gluten-free	1
+chicken008.jpg	main dishes,healthy,fast food	chicken,salad,vegetables,light,lactose-free	4
+chicken009.jpg	main dishes,appetizers	chicken,lactose-free,gluten-free	8
+chicken010.jpg	main dishes	chicken,pasta,vegetables,lactose-free	14
+chicken011.jpg	main dishes,healthy,fast food	chicken,vegetables,lactose-free,gluten-free,light	16
+chicken012.jpg	main dishes	chicken,spicy,vegetables,lactose-free,gluten-free	21
+chicken013.jpg	main dishes	lactose-free,rice,chicken	1
+chicken014.jpg	main dishes,healthy,fast food	chicken,vegetables,nuts,lactose-free,gluten-free	4
+chicken015.jpg	main dishes	chicken,vegetables,gluten-free,lactose-free	8
+chicken016.jpg	main dishes	chicken,spicy,lactose-free	14
+chicken017.jpg	main dishes,fast food	chicken,pasta,lactose-free,fungi,vegetables	16
+chicken018.jpg	main dishes,fast food	chicken,vegetables,lactose-free,gluten-free	21
+chicken019.jpg	main dishes,healthy	chicken,potato,vegetables,gluten-free,lactose-free,light	1
+chicken020.jpg	main dishes	chicken,rice,nuts,vegetables,gluten-free,lactose-free	4
+chicken021.jpg	main dishes,healthy	salad,chicken,vegetables,gluten-free,lactose-free	8
+dessert001.jpg	dessert	chocolate,vegetarian,gluten-free	6
+dessert002.jpg	dessert	cake,fruit,vegetarian	7
+dessert003.jpg	dessert	crepe,chocolate,vegetarian	9
+dessert004.jpg	dessert	vegetarian,gluten-free	11
+dessert005.jpg	dessert,healthy	fruit,light,diabetic,lactose-free,gluten-free,vegetarian,vegan	14
+dessert006.jpg	dessert	chocolate,cake,vegetarian,vegan	16
+dessert007.jpg	dessert,drinks	chocolate,vegetarian,gluten-free,vegan	17
+dessert008.jpg	dessert	gaufre,fruit,chocolate,vegetarian	18
+dessert009.jpg	dessert	diabetic,vegetarian,fruit,ice-cream	19
+dessert010.jpg	dessert	crepe,fruit,chocolate,vegetarian	20
+dessert011.jpg	dessert,drinks	chocolate,vegetarian,gluten-free	21
+dessert012.jpg	dessert	gaufre,vegetarian	22
+dessert013.jpg	dessert,healthy,appetizers	fruit,light,vegetarian,gluten-free,lactose-free,diabetic,vegan	23
+dessert014.jpg	dessert	fruit,chocolate,vegetarian	6
+dessert015.jpg	dessert	fruit,nuts	7
+dessert016.jpg	dessert,drinks	chocolate,vegetarian,gluten-free	9
+dessert017.jpg	dessert	crepe,vegetarian,fruit	11
+dessert018.jpg	dessert	crepe,fruit,vegetarian	14
+dessert019.jpg	dessert	ice-cream,chocolate,vegetarian	16
+dessert020.jpg	dessert	diabetic,ice-cream,vegetarian,chocolate	17
+dessert021.jpg	dessert	ice-cream,chocolate,vegetarian	17
+dessert022.jpg	dessert	ice-cream,chocolate,vegetarian	19
+dessert023.jpg	dessert	cake,vegetarian,light,nuts	20
+dessert024.jpg	dessert	cake,nuts,vegetarian,diabetic,chocolate	21
+dessert025.jpg	dessert	crepe,chocolate,vegetarian,ice-cream	22
+dessert026.jpg	dessert	ice-cream,nuts,vegetarian,fruit,chocolate	23
+dessert027.jpg	dessert	fruit,ice-cream,chocolate,vegetarian,gluten-free	6
+dessert028.jpg	dessert	cake,vegetarian,chocolate	7
+dessert029.jpg	dessert	cheese,cake,fruit,vegetarian	9
+dessert030.jpg	dessert	chocolate,fruit,vegetarian	11
+dessert031.jpg	dessert	chocolate,fruit,vegetarian,gluten-free,diabetic	14
+dessert032.jpg	dessert	ice-cream,banana,chocolate,vegetarian	16
+dessert033.jpg	dessert	vegetarian,light	17
+dessert034.jpg	dessert	vegatarian	18
+dessert035.jpg	dessert	vegetarian,light	19
+dessert036.jpg	dessert	crepe,ice-cream,chocolate,vegetarian	20
+dessert037.jpg	dessert	crepe,chocolate,vegetarian	21
+dessert038.jpg	dessert	crepe,chocolate,ice-cream,vegetarian	22
+dessert039.jpg	dessert	crepe,chocolate,ice-cream,vegetarian	23
+dessert040.jpg	dessert	cake,chocolate,vegetarian	6
+dessert041.jpg	dessert	cake,vegetarian	7
+dessert042.jpg	dessert	chocolate,cake,vegetarian	9
+dessert043.jpg	dessert,snacks	vegetarian,chocolate	11
+dessert044.jpg	dessert,healthy	light,diabetic,gluten-free,cake,chocolate	14
+dessert045.jpg	dessert	fruit,gluten-free,diabetic	16
+dessert046.jpg	dessert	fruit,gluten-free,chocolate	17
+dessert047.jpg	dessert	cake,chocolate,vegetarian	18
+dessert048.jpg	dessert	fruit,cake	19
+dessert049.jpg	dessert	crepe,vegetarian,chocolate,nuts,ice-cream	20
+dessert050.jpg	dessert	chocolate,fruit,vegetarian	21
+dessert051.jpg	dessert	chocolate,fruit,vegetarian	22
+dessert052.jpg	dessert,healthy	light,diabetic,gluten-free,fruit,lactose-free,vegetarian,vegan	23
+dessert053.jpg	dessert,healthy	light,diabetic,gluten-free,fruit,lactose-free,vegetarian,vegan	23
+dessert054.jpg	dessert,healthy	light,diabetic,gluten-free,fruit,lactose-free,vegetarian,vegan	23
+dessert055.jpg	dessert	gaufre,ice-cream,chocolate,vegetarian	9
+dessert056.jpg	dessert	gaufre,vegetarian	11
+dessert057.jpg	dessert	gaufre,vegetarian	14
+dessert058.jpg	dessert,drinks	chocolate,vegetarian	16
+dessert059.jpg	dessert,healthy,snacks	fruit,light,diabetic,lactose-free,gluten-free,vegetarian,vegan	23
+dessert060.jpg	dessert	chocolate,fruit,vegetarian,gluten-free	18
+drinks001.jpg	drinks	alcoholic,cocktail	1
+drinks002.jpg	drinks	alcoholic,shot	2
+drinks003.jpg	drinks	alcoholic,cocktail	3
+drinks004.jpg	drinks	alcoholic,cocktail	4
+drinks005.jpg	drinks	alcoholic,cocktail	5
+drinks006.jpg	drinks	alcoholic,cocktail	8
+drinks007.jpg	drinks	alcoholic,shot	11
+drinks008.jpg	drinks	alcoholic,cocktail	14
+drinks009.jpg	drinks	tea	20
+drinks010.jpg	drinks	alcoholic,cocktail	22
+drinks011.jpg	drinks	hot chocolate	23
+drinks012.jpg	drinks	hot chocolate	1
+drinks013.jpg	drinks	alcoholic	2
+drinks014.jpg	drinks	alcoholic,cocktail	3
+drinks015.jpg	drinks	alcoholic,cocktail	4
+drinks016.jpg	drinks	alcoholic,cocktail	5
+drinks017.jpg	drinks	alcoholic,cocktail	8
+drinks018.jpg	drinks	alcoholic,cocktail	11
+drinks019.jpg	drinks	alcoholic,cocktail	14
+drinks020.jpg	drinks	alcoholic,shot	20
+drinks021.jpg	drinks	alcoholic,cocktail	22
+drinks022.jpg	drinks	alcoholic,cocktail	23
+drinks023.jpg	drinks	alcoholic,shot	1
+drinks024.jpg	drinks	alcoholic,cocktail	2
+drinks025.jpg	drinks	alcoholic,wine	3
+drinks026.jpg	drinks	alcoholic,shot	4
+drinks027.jpg	drinks	alcoholic,shot	5
+drinks028.jpg	drinks	alcoholic,cocktail	8
+drinks029.jpg	drinks	alcoholic,cocktail	11
+drinks030.jpg	drinks	alcoholic,cocktail	14
+drinks031.jpg	drinks	alcoholic,wine	20
+drinks032.jpg	drinks	alcoholic,cocktail	22
+drinks033.jpg	drinks	alcoholic,cocktail	23
+drinks034.jpg	drinks	alcoholic,cocktail	1
+drinks035.jpg	drinks	alcoholic,shot	2
+drinks036.jpg	drinks	alcoholic,shot	3
+drinks037.jpg	drinks	hot chocolate	4
+drinks038.jpg	drinks	hot chocolate	5
+drinks039.jpg	drinks	hot chocolate	8
+drinks040.jpg	drinks	alcoholic,shot	11
+drinks041.jpg	drinks	alcoholic,cocktail	14
+drinks042.jpg	drinks	tea	20
+drinks043.jpg	drinks	alcoholic,shot	22
+drinks044.jpg	drinks	alcoholic,cocktail	23
+drinks045.jpg	drinks	alcoholic,shot	1
+drinks046.jpg	drinks	alcoholic,cocktail	2
+drinks047.jpg	drinks	alcoholic,cocktail	3
+drinks048.jpg	drinks	alcoholic,cocktail	4
+drinks049.jpg	drinks	alcoholic,cocktail	5
+drinks050.jpg	drinks	alcoholic,cocktail	8
+fish001.jpg	main dishes,healthy	fish,gluten-free,seafood,light	7
+fish002.jpg	main dishes	fish,vegetables,gluten-free,seafood,lactose-free	6
+fish003.jpg	main dishes	fish,seafood,lactose-free,vegetables	9
+fish004.jpg	main dishes	fish,seafood,vegetables,gluten-free,lactose-free	6
+fish005.jpg	main dishes,healthy	fish,seafood,vegetables,nuts,gluten-free,lactose-free	16
+fish006.jpg	main dishes,healthy	fish,seafood,gluten-free,lactose-free,light	7
+fish007.jpg	main dishes,healthy	fish,seafood,vegetables,gluten-free,spicy,lactose-free	16
+fish008.jpg	main dishes	fish,seafood,gluten-free	9
+fish009.jpg	main dishes	fish,seafood,vegetables	6
+fish010.jpg	main dishes	fish,seafood,gluten-free,vegetables,lactose-free	9
+fish011.jpg	main dishes	fish,seafood,rice,vegetables,gluten-free	6
+fish012.jpg	main dishes	fish,seafood,vegetables,gluten-free,lactose-free	9
+fish013.jpg	main dishes	fish,seafood,vegetables,nuts,gluten-free,lactose-free	6
+fish014.jpg	main dishes	fish,seafood,potato,gluten-free	9
+fish015.jpg	main dishes,healthy	fish,seafood,vegetables,lactose-free,gluten-free,light	7
+fish016.jpg	main dishes	fish,seafood,potato,gluten-free,lactose-free	6
+fish017.jpg	main dishes,healthy	fish,seafood,light,vegetables,gluten-free,lactose-free	16
+fish018.jpg	main dishes,healthy	fish,seafood,light,vegetables,gluten-free,lactose-free	7
+fish019.jpg	main dishes	fish,seafood,potato,gluten-free	6
+fish020.jpg	main dishes	fish,seafood,vegetables,gluten-free	9
+fish021.jpg	main dishes	fish,seafood,gluten-free	6
+french001.jpg	main dishes	cheese,potato,vegetarian,gluten-free	1
+french002.jpg	main dishes	cheese,potato,gluten-free,charcuterie	2
+french003.jpg	main dishes	cheese,potato,gluten-free,charcuterie	5
+french004.jpg	main dishes	cheese,red meat,chicken,vegetables	14
+french005.jpg	main dishes	red meat,raw,gluten-free,lactose-free	21
+french006.jpg	main dishes,healthy	cheese,potato,vegetables,gluten-free,vegetarian	22
+french007.jpg	main dishes	red meat,fungi,vegetables,gluten-free,lactose-free	23
+french008.jpg	main dishes	red meat,raw,gluten-free,lactose-free	1
+french009.jpg	main dishes	red meat,potato,vegetables,gluten-free	2
+french010.jpg	main dishes	bread,cheese,vegetables	5
+french011.jpg	main dishes	bread,vegetables,potato,seafood	14
+french012.jpg	main dishes	vegetables,fungi,seafood	21
+french013.jpg	main dishes	cheese,bread,charcuterie	22
+french014.jpg	main dishes	cheese,bread,charcuterie	23
+french015.jpg	main dishes	red meat,raw,potato,bread,egg	1
+french016.jpg	main dishes	red meat,gluten-free	2
+french017.jpg	main dishes	chesse,potato,charcuterie,gluten-free,salad	5
+french018.jpg	main dishes	cheese,bread	14
+french019.jpg	main dishes	cheese,potato,charcuterie,gluten-free	21
+french020.jpg	main dishes	vegetables,cheese	22
+french021.jpg	main dishes	cheese,potato,charcuterie,gluten-free	23
+french022.jpg	main dishes	red meat,charcuterie,cheese,potato,vegetables,gluten-free	1
+french023.jpg	main dishes	charcuterie,cheese,vegetables,potato,gluten-free	2
+french024.jpg	main dishes	charcuterie,cheese,vegetables,potato,gluten-free	5
+french025.jpg	main dishes	cheese,potato,charcuterie,gluten-free	14
+french026.jpg	main dishes	cheese,bread	21
+french027.jpg	main dishes	red meat,raw,egg,salad,gluten-free,lactose-free,potato	22
+french028.jpg	main dishes	red meat,raw,egg,gluten-free,lactose-free	23
+french029.jpg	main dishes	red meat,egg,gluten-free,lactose-free	1
+french030.jpg	main dishes	red meat,raw,gluten-free,lactose-free	2
+french031.jpg	main dishes	red meat,raw,gluten-free,lactose-free	5
+french032.jpg	main dishes	red meat,raw,gluten-free,lactose-free,potato	14
+french033.jpg	main dishes	potato,cheese,gluten-free	21
+french034.jpg	main dishes	potato,cheese,charcuterie,gluten-free	22
+french035.jpg	main dishes	potato,cheese,charcuterie,gluten-free	23
+french036.jpg	main dishes	potato,cheese,charcuterie,gluten-free	1
+french037.jpg	main dishes	potato,cheese,charcuterie,gluten-free	2
+french038.jpg	main dishes	potato,cheese,charcuterie,gluten-free	5
+french039.jpg	main dishes	cheese,bread	14
+french040.jpg	main dishes	cheese,bread,vegetables	21
+french041.jpg	main dishes	cheese,bread	22
+french042.jpg	main dishes	cheese,charcuterie,vegetables,fungi,potato,red meat	23
+mc001.jpg	fast food,main dishes	red meat,potato,bread,cheese,	13
+mc002.jpg	fast food,main dishes	red meat,potato,bread,cheese,	13
+mc003.jpg	fast food,main dishes	chicken,potato,bread,cheese,	13
+mc004.jpg	fast food,appetizers	chicken	13
+mc005.jpg	fast food,mian dishes,dessert	ice-cream,potato,bread,cheese,red meat	13
+mc006.jpg	fast food,main dishes	bread,cheese,fish	13
+mc007.jpg	fast food,main dishes	bread,cheese,red meat	13
+mc008.jpg	fast food,main dishes	red meat,potato,bread,cheese	13
+mc009.jpg	fast food,appetizers	chicken	13
+meat001.jpg	main dishes	red meat,potato,salad,gluten-free,lactose-free	2
+meat002.jpg	main dishes	red meat,vegetables,potato,gluten-free,lactose-free	4
+meat003.jpg	main dishes	red meat,potato,gluten-free,lactose-free	8
+meat004.jpg	main dishes	red meat,potato,gluten-free	15
+meat005.jpg	main dishes	red meat,potato,gluten-free	17
+meat006.jpg	main dishes	red meat,vegetables,potato,gluten-free	21
+meat007.jpg	main dishes	red meat,fungi,gluten-free,lactose-free,vegetables	2
+meat008.jpg	main dishes	red meat,potato,salad,gluten-free,lactose-free	4
+meat009.jpg	main dishes	red meat,raw,potato,egg,gluten-free,lactose-free	8
+meat010.jpg	main dishes	red meat,potato,salad,lactose-free,gluten-free	15
+meat011.jpg	main dishes	red meat,potato,salad,lactose-free,gluten-free	17
+meat012.jpg	main dishes	red meat,potato,salad,lactose-free,gluten-free	21
+meat013.jpg	main dishes	red meat,vegetables,potato,gluten-free,lactose-free	2
+meat014.jpg	main dishes	red meat,rice,vegetables,gluten-free	4
+meat015.jpg	main dishes	red meat,vegetables,fungi,gluten-free,lactose-free	8
+meat016.jpg	main dishes	red meat,potato,vegetables,gluten-free,lactose-free	15
+meat017.jpg	main dishes	red meat,fungi,gluten-free,lactose-free,vegetables,potato	17
+meat018.jpg	main dishes	red meat,potato,vegetables,gluten-free,lactose-free	21
+meat019.jpg	main dishes	red meat,salad,potato,gluten-free,lactose-free	2
+meat020.jpg	main dishes	red meat,egg,potato,salad,gluten-free,lactose-free	4
+meat021.jpg	main dishes	red meat,potato,gluten-free lactose-free	8
+meat022.jpg	main dishes	red meat,potato,salad,gluten-free	15
+meat023.jpg	main dishes	red meat,salad,potato,vegetables,gluten-free,lactose-free	17
+meat024.jpg	main dishes	red meat,potato,vegetables,gluten-free,lactose-free	21
+meat025.jpg	main dishes	red meat,vegetables,potato,gluten-free,lactose-free	2
+meat026.jpg	main dishes	red meat,potato,gluten-free	4
+meat027.jpg	main dishes	red meat,vegetables,potato,gluten-free,lactose-free	8
+meat028.jpg	main dishes	red meat,potato,vegetables,gluten-free,lactose-free	15
+meat029.jpg	main dishes	red meat,salad,gluten-free	17
+pasta001.jpg	main dishes	vegetarian,vegan,lactose-free,pasta,vegetables	3
+pasta002.jpg	main dishes	vegetarian,vegan,gluten-free,vegetables,fungi,rice	12
+pasta003.jpg	main dishes	vegetarian,pizza,cheese	15
+pasta004.jpg	main dishes	chicken,pasta	18
+pasta005.jpg	main dishes	gluten-free,seafood,rice	19
+pasta006.jpg	main dishes	gluten-free,seafood,rice,vegetables	3
+pasta007.jpg	main dishes	lactose-free,pizza,seafood,cheese	12
+pasta008.jpg	main dishes	vegetarian,vegan,gluten-free,fungi,rice,vegetables	15
+pasta009.jpg	main dishes	vegetarian,pizza,cheese	18
+pasta010.jpg	main dishes	vegetarian,gluten-free,rice,fungi	19
+pasta011.jpg	main dishes,healthy	vegetarian,lactose-free,pasta,vegetables,cheese	3
+pasta012.jpg	main dishes,fast food	vegetarian,charcuterie,cheese,vegetables	12
+pasta013.jpg	main dishes	gluten-free,charcuterie,rice	15
+pasta014.jpg	main dishes,fast food	charcuterie,cheese	18
+pasta015.jpg	main dishes	vegetarian,pasta,cheese,spicy	19
+pasta016.jpg	main dishes	charcuterie,pasta,vegetables	3
+pasta017.jpg	main dishes	red meat,pasta,cheese	12
+pasta018.jpg	main dishes	vegetarian,pasta,vegetables,cheese	15
+pasta019.jpg	main dishes	chicken,pasta	18
+pasta020.jpg	main dishes	seafood,pasta,vegetables	19
+pasta021.jpg	main dishes	vegetarian,pasta,bread	3
+pasta022.jpg	main dishes,fast food	vegetarian,pizza,cheese	12
+pasta023.jpg	main dishes	vegetarian,pasta,vegetables,cheese	15
+pasta024.jpg	main dishes	vegetarian,pizza,cheese,vegetables	18
+pasta025.jpg	main dishes	lactose-free,pasta,red meat,spicy	19
+pasta026.jpg	main dishes	red meat,pasta,cheese	3
+pasta027.jpg	main dishes	vegetarian,gluten-free,rice,vegetables	12
+pasta028.jpg	main dishes,healthy	vegetarian,pasta,vegetables,cheese	15
+pasta029.jpg	main dishes	pasta,chicken,vegetables,cheese	18
+pasta030.jpg	main dishes	charcuterie,pizza,cheese,vegetables,fungi	19
+pasta031.jpg	main dishes,fast food	pizza,charcuterie,cheese	3
+pasta032.jpg	main dishes	lactose-free,seafood,pasta,vegetables	12
+pasta033.jpg	main dishes	charcuterie,pasta	15
+pasta034.jpg	main dishes	vegetarian,vegan,lactose-free,pasta	18
+pasta035.jpg	main dishes	lactose-free,pasta,charcuterie	19
+pasta036.jpg	main dishes	seafood,pasta	3
+pasta037.jpg	main dishes	lactose-free,pasta,vegetables	12
+pasta038.jpg	main dishes,fast food	vegetarian,pizza,cheese	15
+pasta039.jpg	main dishes,fast food	pizza,cheese,vegetables,nuts	18
+pasta040.jpg	main dishes	vegetarian,pizza,cheese,vegetables	19
+pasta041.jpg	main dishes	vegetarian,pizza,cheese,vegetables	3
+pasta042.jpg	dessert	vegetarian,pizza,chocolate,fruit	12
+pasta043.jpg	main dishes,healthy	vegetarian,pizza,cheese,vegetables,fungi,spicy	15
+pasta044.jpg	main dishes,fast food	pizza,charcuterie,chesse,vegetables	18
+pasta045.jpg	main dishes	pasta,red meat,cheese	19
+pasta046.jpg	main dishes	lactose-free,red meat,pasta	3
+pasta047.jpg	main dishes	pasta,red meat,cheese	12
+pasta048.jpg	main dishes,healthy	vegetarian,pasta,cheese	15
+pasta049.jpg	main dishes	lactose-free,pasta,red meat	18
+pasta050.jpg	main dishes	lactose-free,pasta,chicken	19
+pasta051.jpg	main dishes	vegetarian,pasta,nuts	3
+pasta052.jpg	main dishes,healthy	gluten-free,vegetarian,rice,fungi	12
+pasta053.jpg	main dishes	gluten-free,seafood,rice,spicy	15
+pasta054.jpg	main dishes,fast food	pasta,cheese,red meat	18
+pasta055.jpg	main dishes,healthy	seafood,pasta,cheese	19
+pasta056.jpg	main dishes	pasta,cheese,red meat	3
+pasta057.jpg	main dishes	lactose-free,pasta,charcuterie	12
+pasta058.jpg	main dishes,healthy	vegetarian,gluten-free,rice,vegetables,cheese	15
+pasta059.jpg	main dishes	vegetarian,pasta,lactose-free,vegetables	18
+pasta060.jpg	main dishes	vegetarian,cheese,pasta	19
+pasta061.jpg	main dishes	lactose-free,seafood,pasta,vegetables	3
+pasta062.jpg	main dishes	vegetarian,vegan,pasta	12
+pasta063.jpg	main dishes	pasta,charcuterie	15
+quick001.jpg	fast food,main dishes	red meat,bread,cheese	10
+quick002.jpg	fast food,main dishes	red meat,bread,cheese	10
+quick003.jpg	fast food,main dishes	red meat,bread,potato,cheese	10
+quick004.jpg	fast food,main dishes	red meat,bread,cheese	10
+quick005.jpg	fast food,main dishes	red meat,bread,potato,cheese	10
+quick006.jpg	fast food,main dishes	red meat,bread,potato,cheese	10
+quick007.jpg	fast food,main dishes	red meat,bread,potato,cheese	10
+quick008.jpg	fast food,main dishes	red meat,bread,potato,cheese	10
+snack001.jpg	snacks	vegetarian,viennoiserie	7
+snack002.jpg	snacks	vegetarian,bread	9
+snack003.jpg	snacks	bread,charcuterie,cheese	11
+snack004.jpg	snacks,dessert	vegetarian,chocolate,viennoiserie	15
+snack005.jpg	snacks	bread,charcuterie,cheese	17
+snack006.jpg	snacks	bread,charcuterie,cheese	7
+snack007.jpg	snacks,dessert	vegetarian,chocolate,viennoiserie	9
+snack008.jpg	snacks,dessert	vegetarian,chocolate,viennoiserie	11
+snack009.jpg	snacks	vegetarian	15
+snack010.jpg	snacks	bread,charcuterie,cheese	17
+snack011.jpg	snacks	bread,charcuterie,cheese	7
+snack012.jpg	snacks	vegetarian	9
+snack013.jpg	snacks	vegetarian,viennoiserie	11
+snack014.jpg	snacks	vegetarian,bread	15
+snack015.jpg	snacks	vegetarian,chocolate,viennoiserie	17
+snack016.jpg	snacks	vegetarian	7
+snack017.jpg	snacks	vegetarian,bread	9
+snack018.jpg	snacks	vegetarian,chocolate,viennoiserie	11
+snack019.jpg	snacks	vegetarian,bread	15
+soup001.jpg	appetizers,heatlhy	soup,bread,vegetarian	4
+soup002.jpg	appetizers	soup,gluten-free	5
+soup003.jpg	appetizers	soup,fungi,pasta,lactose-free	6
+soup004.jpg	main dishes	soup,chicken,vegetables,gluten-free,lactose-free	11
+soup005.jpg	appetizers	soup,vegetables,spicy,vegetarian,gluten-free	20
+soup006.jpg	main dishes,healthy	soup,vegetables,nuts,vegetarian,gluten-free,lactose-free	4
+soup007.jpg	appetizers,heatlhy	soup,vegetarian,gluten-free,vegan,light	5
+soup008.jpg	main dishes	soup,vegetarian,gluten-free	6
+soup009.jpg	main dishes,healthy	soup,chicken,vegetables,gluten-free,lactose-free,light	11
+soup010.jpg	appetizers	soup,vegetarian,vegan,gluten-free	20
+soup011.jpg	appetizers,heatlhy	soup,gluten-free,light	4
+soup012.jpg	main dishes,healthy	soup,gluten-free	5
+soup013.jpg	main dishes	soup,red meat,gluten-free	6
+soup014.jpg	main dishes	soup,red meat,gluten-free	11
+soup015.jpg	main dishes	soup,vegetables,gluten-free,red meat	20
+soup016.jpg	main dishes	soup,pasta,chicken,vegetables,lactose-free	4
+soup017.jpg	appetizers,heatlhy	soup,vegetables,vegetarian,vegan,gluten-free,light	5
+soup018.jpg	main dishes	soup,gluten-free,red meat,vegetables	6
+soup019.jpg	appetizers	soup,red meat,bread	11
+soup020.jpg	main dishes	soup,lactose-free,vegetables,red meat	20
+vegan001.jpg	fast food,healthy,main dishes	vegetarian,vegan,vegetables,bread,lactose-free	12
+vegan002.jpg	main dishes,healthy	vegetarian,vegan,vegetables,gluten-free	16
+vegan003.jpg	main dishes,healthy	vegetarian,vegan,salad,vegetables,gluten-free,lactose-free	17
+vegan004.jpg	main dishes,healthy	vegetarian,vegan,potato,vegetables,salad,lactose-free	22
+vegan005.jpg	main dishes,healthy	vegetarian,vegan,lactose-free,vegetables	12
+vegan006.jpg	main dishes,healthy	vegetarian,vegan,vegetables,gluten-free,lactose-free	16
+vegan007.jpg	main dishes,healthy	vegetarian,vegan,vegetables,spicy,nuts,gluten-free,lactose-free	17
+vegan008.jpg	main dishes,healthy	vegetarian,vegan,lactose-free,vegetables,nuts,gluten-free	22
+vegan009.jpg	main dishes	vegetarian,vegan,rice,vegetables,lactose-free,gluten-free	12
+vegan010.jpg	main dishes,healthy	vegetarian,vegan,vegetables,nuts,fruit,salad,gluten-free,lactose-free	16
+vegan011.jpg	main dishes	vegetarian,vegan,vegetables,potato,gluten-free,lactose-free	17
+vegan012.jpg	main dishes,healthy	vegetarian,vegan,vegetables,gluten-free,lactose-free	22
+vegan013.jpg	fast food,main dishes,healthy	vegetarian,vegan,vegetables,bread,lactose-free	12
+vegan014.jpg	main dishes,healthy	vegetarian,vegan,bread,vegetables,lactose-free	16
+vegan015.jpg	main dishes,healthy	vegetarian,vegan,bread,vegetables,lactose-free	17
+vegan016.jpg	appetizers,healthy	vegetarian,vegan,bread,vegetables,lactose-free	22
+vegan017.jpg	fast food,main dishes,healthy	vegetarian,vegan,bread,vegetables,lactose-free	20
